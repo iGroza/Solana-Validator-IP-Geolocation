@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solana Validators Visualization</title>
-    <!-- Include open-source libraries -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -13,65 +12,171 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       body {
         font-family: Arial, sans-serif;
-        margin: 20px;
+        line-height: 1.6;
+        padding: 20px;
+        background-color: #fff;
       }
-      .chart {
-        margin-bottom: 40px;
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
       }
-      #map {
-        height: 400px;
-        margin-bottom: 40px;
+      .header-title {
+        display: flex;
+        flex-direction: column;
       }
-      .download-btn {
-        display: inline-block;
+      .header-buttons {
+        display: flex;
+        gap: 10px;
+      }
+      .button {
         padding: 10px 20px;
-        background-color: #4caf50;
-        color: white;
+        background-color: #333;
+        color: #fff;
         text-decoration: none;
         border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .button:hover {
+        background-color: #555;
+      }
+      .download-btn {
+        background-color: #4caf50;
+      }
+      .download-btn:hover {
+        background-color: #45a049;
+      }
+      #statistics {
+        margin-bottom: 40px;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .stat-item {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .stat-label {
+        font-weight: bold;
+      }
+      #map {
+        height: 50vh;
+        margin-bottom: 40px;
+      }
+      .chart {
+        max-width: 800px;
+        margin: 0 auto 40px;
+      }
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .header-buttons {
+          margin-top: 10px;
+          flex-direction: column;
+          width: 100%;
+        }
+        .header-buttons a {
+          width: 100%;
+          text-align: center;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
-    <h1><a href="https://github.com/iGroza/Solana-Validator-IP-Geolocation">Solana Validators Visualization</a></h1>
-    <!-- Download button -->
-    <a href="solana_validators.csv" download class="download-btn"
-      >Download CSV</a
-    >
-    <!-- Display general statistics -->
-    <p>Total validators: <span id="total-validators"></span></p>
-    <p>Unique cities: <span id="unique-cities"></span></p>
-    <p>Unique regions: <span id="unique-regions"></span></p>
-    <p>Unique hosting providers: <span id="unique-hosting"></span></p>
-    <p>Unique countries: <span id="unique-countries"></span></p>
-    <!-- Map section -->
-    <h2>Geographical Distribution of Validators</h2>
-    <div id="map"></div>
-    <!-- Chart sections -->
-    <div class="chart">
-      <h2>Top 10 Cities</h2>
-      <canvas id="city-chart"></canvas>
-    </div>
-    <div class="chart">
-      <h2>Top 10 Regions</h2>
-      <canvas id="region-chart"></canvas>
-    </div>
-    <div class="chart">
-      <h2>Top 10 Hosting Providers</h2>
-      <canvas id="hosting-chart"></canvas>
-    </div>
-    <div class="chart">
-      <h2>Top 10 Countries</h2>
-      <canvas id="country-chart"></canvas>
-    </div>
-
+    <header>
+      <div class="header-title">
+        <h1>Solana Validators Visualization</h1>
+        <p id="last-update"></p>
+      </div>
+      <div class="header-buttons">
+        <a
+          href="https://github.com/iGroza/Solana-Validator-IP-Geolocation"
+          class="button"
+          >View on GitHub</a
+        >
+        <a href="solana_validators.csv" download class="button download-btn"
+          >Download CSV</a
+        >
+      </div>
+    </header>
+    <section id="statistics">
+      <h2>Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-label">Total validators:</span>
+          <span id="total-validators"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Unique cities:</span>
+          <span id="unique-cities"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Unique regions:</span>
+          <span id="unique-regions"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Unique hosting providers:</span>
+          <span id="unique-hosting"></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Unique countries:</span>
+          <span id="unique-countries"></span>
+        </div>
+      </div>
+    </section>
+    <section id="map-section">
+      <h2>Geographical Distribution of Validators</h2>
+      <div id="map"></div>
+    </section>
+    <section id="charts">
+      <div class="chart">
+        <h2>Top 10 Cities</h2>
+        <canvas id="city-chart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Top 10 Regions</h2>
+        <canvas id="region-chart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Top 10 Hosting Providers</h2>
+        <canvas id="hosting-chart"></canvas>
+      </div>
+      <div class="chart">
+        <h2>Top 10 Countries</h2>
+        <canvas id="country-chart"></canvas>
+      </div>
+    </section>
     <script>
-      // Load data from the CSV file using D3.js
+      document.addEventListener("DOMContentLoaded", async () => {
+        const { timestamp } = await fetch("/last_update.json").then((r) =>
+          r.json()
+        );
+        document.getElementById(
+          "last-update"
+        ).textContent = `Last update: ${new Date(
+          timestamp
+        ).toDateString()}`;
+      });
       d3.csv("solana_validators.csv")
         .then(function (data) {
-          // Update general statistics
           document.getElementById("total-validators").textContent = data.length;
           document.getElementById("unique-cities").textContent = new Set(
             data.map((d) => d.City)
@@ -85,15 +190,11 @@
           document.getElementById("unique-countries").textContent = new Set(
             data.map((d) => d.Country)
           ).size;
-
-          // Initialize the map with Leaflet.js
           const map = L.map("map").setView([0, 0], 2);
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution:
               '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           }).addTo(map);
-
-          // Add markers to the map for each validator
           data.forEach(function (row) {
             if (row.Loc) {
               const [lat, lon] = row.Loc.split(" ").map(Number);
@@ -106,18 +207,14 @@
               }
             }
           });
-
-          // Helper function to count frequency of values in a column
           function countFrequency(data, column) {
             const frequency = {};
             data.forEach(function (row) {
-              let value = row[column] || "Unknown"; // Handle empty values
+              let value = row[column] || "Unknown";
               frequency[value] = (frequency[value] || 0) + 1;
             });
             return frequency;
           }
-
-          // City chart using Chart.js
           const cityFrequency = countFrequency(data, "City");
           const sortedCities = Object.entries(cityFrequency)
             .sort((a, b) => b[1] - a[1])
@@ -148,8 +245,6 @@
               },
             },
           });
-
-          // Region chart using Chart.js
           const regionFrequency = countFrequency(data, "Region");
           const sortedRegions = Object.entries(regionFrequency)
             .sort((a, b) => b[1] - a[1])
@@ -180,8 +275,6 @@
               },
             },
           });
-
-          // Hosting chart using Chart.js (horizontal for better label readability)
           const hostingFrequency = countFrequency(data, "Hosting");
           const sortedHosting = Object.entries(hostingFrequency)
             .sort((a, b) => b[1] - a[1])
@@ -203,7 +296,7 @@
               ],
             },
             options: {
-              indexAxis: "y", // Horizontal bars
+              indexAxis: "y",
               scales: { x: { beginAtZero: true } },
               plugins: {
                 title: {
@@ -213,8 +306,6 @@
               },
             },
           });
-
-          // Country chart using Chart.js (new addition per request)
           const countryFrequency = countFrequency(data, "Country");
           const sortedCountries = Object.entries(countryFrequency)
             .sort((a, b) => b[1] - a[1])
@@ -247,7 +338,6 @@
           });
         })
         .catch(function (error) {
-          // Log any errors encountered while loading the CSV
           console.error("Error loading CSV file:", error);
         });
     </script>

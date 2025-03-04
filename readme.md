@@ -1,6 +1,7 @@
 # Solana Validator IP Geolocation
 
-This script retrieves Solana cluster node information, validates active validators, fetches their geolocation data, and saves the results as a CSV file.
+
+This script retrieves Solana cluster node information, find active validators, fetches their geolocation data, and saves the results as a CSV file.
 
 Github pages: [igroza.github.io/Solana-Validator-IP-Geolocation](https://igroza.github.io/Solana-Validator-IP-Geolocation/)
 
