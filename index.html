@@ -3,14 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solana Validators Visualization</title>
+    <title>
+      Solana Validators Visualization - Explore Geographical Distribution
+    </title>
+    <meta
+      name="description"
+      content="Visualize Solana validators' geographical distribution with interactive maps and charts. Download the latest CSV data and explore validator statistics."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Solana Validators Visualization",
+        "description": "Interactive visualization of Solana validators' geographical distribution.",
+        "url": "https://github.com/iGroza/Solana-Validator-IP-Geolocation"
+      }
+    </script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
       * {
         margin: 0;
@@ -80,6 +92,27 @@
         max-width: 800px;
         margin: 0 auto 40px;
       }
+      #share {
+        margin-top: 20px;
+      }
+      #share a {
+        margin-right: 10px;
+        padding: 8px 16px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      #share a:hover {
+        background-color: #555;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        margin-top: 20px;
+      }
       @media (max-width: 768px) {
         header {
           flex-direction: column;
@@ -117,55 +150,66 @@
         >
       </div>
     </header>
-    <section id="statistics">
-      <h2>Statistics</h2>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-label">Total validators:</span>
-          <span id="total-validators"></span>
+    <main>
+      <section id="statistics">
+        <h2>Validator Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-label">Total validators:</span>
+            <span id="total-validators"></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Unique cities:</span>
+            <span id="unique-cities"></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Unique regions:</span>
+            <span id="unique-regions"></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Unique hosting providers:</span>
+            <span id="unique-hosting"></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Unique countries:</span>
+            <span id="unique-countries"></span>
+          </div>
         </div>
-        <div class="stat-item">
-          <span class="stat-label">Unique cities:</span>
-          <span id="unique-cities"></span>
+      </section>
+      <section id="map-section">
+        <h2>Geographical Distribution of Validators</h2>
+        <div id="map"></div>
+      </section>
+      <section id="charts">
+        <div class="chart">
+          <h2>Top 10 Cities</h2>
+          <canvas id="city-chart"></canvas>
         </div>
-        <div class="stat-item">
-          <span class="stat-label">Unique regions:</span>
-          <span id="unique-regions"></span>
+        <div class="chart">
+          <h2>Top 10 Regions</h2>
+          <canvas id="region-chart"></canvas>
         </div>
-        <div class="stat-item">
-          <span class="stat-label">Unique hosting providers:</span>
-          <span id="unique-hosting"></span>
+        <div class="chart">
+          <h2>Top 10 Hosting Providers</h2>
+          <canvas id="hosting-chart"></canvas>
         </div>
-        <div class="stat-item">
-          <span class="stat-label">Unique countries:</span>
-          <span id="unique-countries"></span>
+        <div class="chart">
+          <h2>Top 10 Countries</h2>
+          <canvas id="country-chart"></canvas>
         </div>
-      </div>
-    </section>
-    <section id="map-section">
-      <h2>Geographical Distribution of Validators</h2>
-      <div id="map"></div>
-    </section>
-    <section id="charts">
-      <div class="chart">
-        <h2>Top 10 Cities</h2>
-        <canvas id="city-chart"></canvas>
-      </div>
-      <div class="chart">
-        <h2>Top 10 Regions</h2>
-        <canvas id="region-chart"></canvas>
-      </div>
-      <div class="chart">
-        <h2>Top 10 Hosting Providers</h2>
-        <canvas id="hosting-chart"></canvas>
-      </div>
-      <div class="chart">
-        <h2>Top 10 Countries</h2>
-        <canvas id="country-chart"></canvas>
-      </div>
-    </section>
+      </section>
+    </main>
+    <footer>
+      <p id="footer"></p>
+    </footer>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", async () => {
+        document.getElementById(
+          "footer"
+        ).textContent = `© ${new Date().getFullYear()} Powered with ♥️ by iGroza`;
         const { timestamp } = await fetch("/last_update.json").then((r) =>
           r.json()
         );
