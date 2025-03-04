@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solana Validators Visualization</title>
+    <!-- Include open-source libraries -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .chart {
+        margin-bottom: 40px;
+      }
+      #map {
+        height: 400px;
+        margin-bottom: 40px;
+      }
+      .download-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><a href="https://github.com/iGroza/Solana-Validator-IP-Geolocation">Solana Validators Visualization</a></h1>
+    <!-- Download button -->
+    <a href="solana_validators.csv" download class="download-btn"
+      >Download CSV</a
+    >
+    <!-- Display general statistics -->
+    <p>Total validators: <span id="total-validators"></span></p>
+    <p>Unique cities: <span id="unique-cities"></span></p>
+    <p>Unique regions: <span id="unique-regions"></span></p>
+    <p>Unique hosting providers: <span id="unique-hosting"></span></p>
+    <p>Unique countries: <span id="unique-countries"></span></p>
+    <!-- Map section -->
+    <h2>Geographical Distribution of Validators</h2>
+    <div id="map"></div>
+    <!-- Chart sections -->
+    <div class="chart">
+      <h2>Top 10 Cities</h2>
+      <canvas id="city-chart"></canvas>
+    </div>
+    <div class="chart">
+      <h2>Top 10 Regions</h2>
+      <canvas id="region-chart"></canvas>
+    </div>
+    <div class="chart">
+      <h2>Top 10 Hosting Providers</h2>
+      <canvas id="hosting-chart"></canvas>
+    </div>
+    <div class="chart">
+      <h2>Top 10 Countries</h2>
+      <canvas id="country-chart"></canvas>
+    </div>
+
+    <script>
+      // Load data from the CSV file using D3.js
+      d3.csv("solana_validators.csv")
+        .then(function (data) {
+          // Update general statistics
+          document.getElementById("total-validators").textContent = data.length;
+          document.getElementById("unique-cities").textContent = new Set(
+            data.map((d) => d.City)
+          ).size;
+          document.getElementById("unique-regions").textContent = new Set(
+            data.map((d) => d.Region)
+          ).size;
+          document.getElementById("unique-hosting").textContent = new Set(
+            data.map((d) => d.Hosting)
+          ).size;
+          document.getElementById("unique-countries").textContent = new Set(
+            data.map((d) => d.Country)
+          ).size;
+
+          // Initialize the map with Leaflet.js
+          const map = L.map("map").setView([0, 0], 2);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map);
+
+          // Add markers to the map for each validator
+          data.forEach(function (row) {
+            if (row.Loc) {
+              const [lat, lon] = row.Loc.split(" ").map(Number);
+              if (!isNaN(lat) && !isNaN(lon)) {
+                L.marker([lat, lon])
+                  .addTo(map)
+                  .bindPopup(
+                    `City: ${row.City}<br>Region: ${row.Region}<br>Hosting: ${row.Hosting}`
+                  );
+              }
+            }
+          });
+
+          // Helper function to count frequency of values in a column
+          function countFrequency(data, column) {
+            const frequency = {};
+            data.forEach(function (row) {
+              let value = row[column] || "Unknown"; // Handle empty values
+              frequency[value] = (frequency[value] || 0) + 1;
+            });
+            return frequency;
+          }
+
+          // City chart using Chart.js
+          const cityFrequency = countFrequency(data, "City");
+          const sortedCities = Object.entries(cityFrequency)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const cityLabels = sortedCities.map((d) => d[0]);
+          const cityData = sortedCities.map((d) => d[1]);
+          new Chart(document.getElementById("city-chart").getContext("2d"), {
+            type: "bar",
+            data: {
+              labels: cityLabels,
+              datasets: [
+                {
+                  label: "Number of Validators",
+                  data: cityData,
+                  backgroundColor: "rgba(75, 192, 192, 0.2)",
+                  borderColor: "rgba(75, 192, 192, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: { y: { beginAtZero: true } },
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Top 10 Cities by Number of Validators",
+                },
+              },
+            },
+          });
+
+          // Region chart using Chart.js
+          const regionFrequency = countFrequency(data, "Region");
+          const sortedRegions = Object.entries(regionFrequency)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const regionLabels = sortedRegions.map((d) => d[0]);
+          const regionData = sortedRegions.map((d) => d[1]);
+          new Chart(document.getElementById("region-chart").getContext("2d"), {
+            type: "bar",
+            data: {
+              labels: regionLabels,
+              datasets: [
+                {
+                  label: "Number of Validators",
+                  data: regionData,
+                  backgroundColor: "rgba(153, 102, 255, 0.2)",
+                  borderColor: "rgba(153, 102, 255, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: { y: { beginAtZero: true } },
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Top 10 Regions by Number of Validators",
+                },
+              },
+            },
+          });
+
+          // Hosting chart using Chart.js (horizontal for better label readability)
+          const hostingFrequency = countFrequency(data, "Hosting");
+          const sortedHosting = Object.entries(hostingFrequency)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const hostingLabels = sortedHosting.map((d) => d[0]);
+          const hostingData = sortedHosting.map((d) => d[1]);
+          new Chart(document.getElementById("hosting-chart").getContext("2d"), {
+            type: "bar",
+            data: {
+              labels: hostingLabels,
+              datasets: [
+                {
+                  label: "Number of Validators",
+                  data: hostingData,
+                  backgroundColor: "rgba(255, 159, 64, 0.2)",
+                  borderColor: "rgba(255, 159, 64, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              indexAxis: "y", // Horizontal bars
+              scales: { x: { beginAtZero: true } },
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Top 10 Hosting Providers by Number of Validators",
+                },
+              },
+            },
+          });
+
+          // Country chart using Chart.js (new addition per request)
+          const countryFrequency = countFrequency(data, "Country");
+          const sortedCountries = Object.entries(countryFrequency)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const countryLabels = sortedCountries.map((d) => d[0]);
+          const countryData = sortedCountries.map((d) => d[1]);
+          new Chart(document.getElementById("country-chart").getContext("2d"), {
+            type: "bar",
+            data: {
+              labels: countryLabels,
+              datasets: [
+                {
+                  label: "Number of Validators",
+                  data: countryData,
+                  backgroundColor: "rgba(54, 162, 235, 0.2)",
+                  borderColor: "rgba(54, 162, 235, 1)",
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              scales: { y: { beginAtZero: true } },
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Top 10 Countries by Number of Validators",
+                },
+              },
+            },
+          });
+        })
+        .catch(function (error) {
+          // Log any errors encountered while loading the CSV
+          console.error("Error loading CSV file:", error);
+        });
+    </script>
+  </body>
+</html>
