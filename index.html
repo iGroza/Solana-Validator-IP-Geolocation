@@ -138,6 +138,10 @@
       <div class="header-title">
         <h1>Solana Validators Visualization</h1>
         <p id="last-update"></p>
+        <img
+          width="50px"
+          src="https://badges.pufler.dev/visits/iGroza/Solana-Validator-IP-Geolocation-page"
+        />
       </div>
       <div class="header-buttons">
         <a
@@ -210,14 +214,12 @@
         document.getElementById(
           "footer"
         ).textContent = `© ${new Date().getFullYear()} Powered with ♥️ by iGroza`;
-        const { timestamp } = await fetch("/last_update.json").then((r) =>
+        const { timestamp } = await fetch("https://igroza.github.io/Solana-Validator-IP-Geolocation/last_update.json").then((r) =>
           r.json()
         );
         document.getElementById(
           "last-update"
-        ).textContent = `Last update: ${new Date(
-          timestamp
-        ).toDateString()}`;
+        ).textContent = `Last update: ${new Date(timestamp).toDateString()}`;
       });
       d3.csv("solana_validators.csv")
         .then(function (data) {
