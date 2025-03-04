@@ -1,0 +1,46 @@
+name: Update Solana Validators CSV
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Запускается каждый день в полночь UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-csv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Create .env file
+        run: echo "IPINFO_API_KEY=${{ secrets.IPINFO_API_KEY }}" > .env
+
+      - name: Run Deno script
+        run: deno run --env-file=.env -A ./main.ts
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add solana_validators.csv
+          git commit -m "⚙️ Update solana_validators.csv" || echo "No changes to commit"
+          git pull
+          git push
+
+      - name: Upload CSV to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: solana_validators.csv
+          tag_name: latest
+          name: Daily CSV Update
+          body: "Automated update `solana_validators.csv` file"
+          draft: false
+          prerelease: false
