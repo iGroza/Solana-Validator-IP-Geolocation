@@ -28,20 +28,18 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          git pull
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           echo "{\"timestamp\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > last_update.json
           git add solana_validators.csv last_update.json
           git commit -m "⚙️ Update solana_validators.csv" || echo "No changes to commit"
-          git pull
           git push
 
       - name: Upload CSV to Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: solana_validators.csv
-          tag_name: latest
           name: Daily CSV Update
           body: "Automated update `solana_validators.csv` file"
-          draft: false
-          prerelease: false
+          make_latest: true
