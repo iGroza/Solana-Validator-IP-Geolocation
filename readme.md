@@ -1,5 +1,6 @@
 # Solana Validator IP Geolocation
 
+[![Update Solana Validators CSV](https://github.com/iGroza/Solana-Validator-IP-Geolocation/actions/workflows/update-solana-validator-csv.yml/badge.svg)](https://github.com/iGroza/Solana-Validator-IP-Geolocation/actions/workflows/update-solana-validator-csv.yml)
 
 This script retrieves Solana cluster node information, find active validators, fetches their geolocation data, and saves the results as a CSV file.
 
