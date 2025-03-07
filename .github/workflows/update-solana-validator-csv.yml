@@ -56,7 +56,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: solana_validators.csv
-          tag: ${{ steps.commit.outputs.tag_name }}
+          tag_name: ${{ steps.commit.outputs.tag_name }}
           name: Daily CSV Update ${{ steps.commit.outputs.tag_name }}
           body: "Automated update `solana_validators.csv` file on ${{ steps.commit.outputs.tag_name }}"
           make_latest: true
