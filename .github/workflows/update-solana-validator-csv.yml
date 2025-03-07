@@ -2,7 +2,7 @@ name: Update Solana Validators CSV
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Запускается каждый день в полночь UTC
+    - cron: '0 0 * * *'  # Runs every day at midnight UTC
   workflow_dispatch:
 
 permissions:
@@ -27,19 +27,36 @@ jobs:
         run: deno run --env-file=.env -A ./main.ts
 
       - name: Commit and push changes
+        id: commit
         run: |
           git pull
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           echo "{\"timestamp\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > last_update.json
           git add solana_validators.csv last_update.json
-          git commit -m "⚙️ Update solana_validators.csv" || echo "No changes to commit"
-          git push
+          if git commit -m "⚙️ Update solana_validators.csv"; then
+            tag_name="daily-update-$(date -u +%Y-%m-%d)"
+            if ! git tag -l | grep -q "^$tag_name$"; then
+              git tag $tag_name
+              git push origin ${{ github.ref_name }}
+              git push origin $tag_name
+              echo "tag_name=$tag_name" >> $GITHUB_OUTPUT
+              echo "create_release=true" >> $GITHUB_OUTPUT
+            else
+              echo "Tag already exists, skipping release"
+              echo "create_release=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "No changes to commit"
+            echo "create_release=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Upload CSV to Release
+        if: steps.commit.outputs.create_release == 'true'
         uses: softprops/action-gh-release@v2
         with:
           files: solana_validators.csv
-          name: Daily CSV Update
-          body: "Automated update `solana_validators.csv` file"
+          tag: ${{ steps.commit.outputs.tag_name }}
+          name: Daily CSV Update ${{ steps.commit.outputs.tag_name }}
+          body: "Automated update `solana_validators.csv` file on ${{ steps.commit.outputs.tag_name }}"
           make_latest: true
