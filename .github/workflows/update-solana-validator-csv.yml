@@ -35,7 +35,7 @@ jobs:
           echo "{\"timestamp\": \"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > last_update.json
           git add solana_validators.csv last_update.json
           if git commit -m "⚙️ Update solana_validators.csv"; then
-            tag_name="daily-update-$(date -u +%Y-%m-%d)"
+            tag_name="date-$(date -u +%Y-%m-%d)"
             if ! git tag -l | grep -q "^$tag_name$"; then
               git tag $tag_name
               git push origin ${{ github.ref_name }}
@@ -58,5 +58,5 @@ jobs:
           files: solana_validators.csv
           tag_name: ${{ steps.commit.outputs.tag_name }}
           name: Daily CSV Update ${{ steps.commit.outputs.tag_name }}
-          body: "Automated update `solana_validators.csv` file on ${{ steps.commit.outputs.tag_name }}"
+          body: "Automated update `solana_validators.csv` file: ${{ steps.commit.outputs.tag_name }}"
           make_latest: true

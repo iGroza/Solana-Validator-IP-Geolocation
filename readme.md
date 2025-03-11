@@ -51,25 +51,26 @@ The script generates a `solana_validators.csv` file containing the following col
 - City
 - Region
 - Country
-- Location (Latitude, Longitude)
-- Hosting Organization
+- Loc (Latitude, Longitude)
+- Hosting (Hosting Organization)
 - Timezone
-- Validator Public Key
+- Pubkey (Validator Public Key)
+- Activated Stake (the stake, in lamports, delegated to this vote account and active in this epoch)
+- RPC (`true` if `:8899` port is open)
 
 ## Example Output
 
-```csv
-IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey
-70.34.244.25,Warsaw,Mazovia,PL,52.2298 21.0118,AS20473 The Constant Company  LLC,Europe/Warsaw,8MZFWowte8pHb6zJXxUdogUfdWRbqu7fGvaWRXtkDP7X
-64.20.36.162,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,G35uLP74uj4eCSfMs17ePKtK1ThuH8JKebAP1T2y6CYw
-23.111.240.195,Lelystad,Flevoland,NL,52.5083 5.4750,AS7979 Servers.com  Inc.,Europe/Amsterdam,5pPRHniefFjkiaArbGX3Y8NUysJmQ9tMZg3FrFGwHzSm
-83.143.86.206,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,C8H7mCWTYDX3LJUgAH5hqmVUQAwdAyHpybTZgvfCJDaM
-80.88.80.251,Brescia,Lombardy,IT,45.5356 10.2147,AS31034 Aruba S.p.A.,Europe/Rome,2zykwzzo1pd3H2oSj5j5SRLTvmpa9Nr2S2Bh8tTVd5Tq
-64.185.226.194,New York City,New York,US,40.7143 -74.0060,AS18450 WebNX  Inc.,America/New_York,7nngV9xuhwHEScyKpmzx5rvAqN7YMrqBfXTr1RDrXFDR
-173.231.56.138,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,AmhQFcGvH2hjkucP78rn6GMKSbstYwyFpCDVKZUwBGrG
-145.40.87.78,Seoul,Seoul,KR,37.5660 126.9784,AS54825 Packet Host  Inc.,Asia/Seoul,3fnhNULLwi3BEyFUVS3qAqPjwegsNDTr3k7C8GxFbmau
-208.85.17.128,Alcobendas,Madrid,ES,40.5316 -3.6475,AS20473 The Constant Company  LLC,Europe/Madrid,mLyfgvyTAuEBVyAZcqyWKJ4SnM88Tqv2hFMy68y8hmY
-107.155.109.154,Tsuen Wan,Tsuen Wan,HK,22.3714 114.1133,AS29802 HIVELOCITY  Inc.,Asia/Hong_Kong,Ft7vbKXZULMQyfxCaMUzbMx55YyDbAHP8WzaWfJpty4q
+```csv=
+IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
+149.248.1.76,Los Angeles,California,US,"34.0614 -118.2385",AS20473 The Constant Company  LLC,America/Los_Angeles,138KHwTqKNWGLoo8fK5i8UxYtwoC5tC8o7M9rY1CDEjT,43792707979020,false
+80.77.175.80,Moscow,Moscow,RU,"55.7522 37.6156",AS28917 Fiord Networks  UAB,Europe/Moscow,13cm6z7ajighVFYN1aR2hPQ3Rhp4QJenDbHGRmps9P1n,23772438369958,false
+46.166.162.219,Šiauliai,Siauliai,LT,"55.9333 23.3167",AS16125 UAB Cherry Servers,Europe/Vilnius,1EWZm7aZYxfZHbyiELXtTgN1yT2vU1HF9d8DWswX2Tp,39986855237688,false
+45.152.160.122,Frankfurt am Main,Hesse,DE,"50.1155 8.6842",AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,1KXvrkPXwkGF6NK1zyzVuJqbXfpenPVPP6hoiK9bsK3,277729040980867,false
+45.135.201.211,Frankfurt am Main,Hesse,DE,"50.1155 8.6842",AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,1MuaDGhuN7KRqvsupUcYmq9u1YRh1pp38hu1WV2WC6S,88514991236096,false
+189.1.164.11,Tokyo,Tokyo,JP,"35.6895 139.6917",AS396356 Latitude.sh,Asia/Tokyo,1NF88KpPdxVAwRSc17cEpwmfusxrrkRmR7G7u8cEva8,27173358209151,false
+23.111.180.186,Tampa,Florida,US,"28.0091 -82.5034",AS29802 HIVELOCITY  Inc.,America/New_York,1so1ctTM24PdU7RLZJzJKYYVYri3gjNeCd8nmHbpdXg,26983187065045,false
+216.238.89.228,El Colorado,Querétaro,MX,"20.5618 -100.2452",AS20473 The Constant Company  LLC,America/Mexico_City,1unarWPGGseFag2WfnoFv8o9P7vTPU8eHex9GinP3eY,365176060171384,false
+31.128.59.215,Moscow,Moscow,RU,"55.7522 37.6156",AS215457 DCS LLC,Europe/Moscow,1znL3zFHi3znoaz6T6rnnEnRj8Ar3fohDq7ZNk37sUL,153701155247935,false
 ```
 
 ## License

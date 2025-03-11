@@ -37,7 +37,12 @@ interface IPInfo {
   loc: string;
   org: string;
   timezone: string;
+}
+
+interface ValidatorData extends IPInfo {
   pubkey: string;
+  activatedStake: number;
+  rpc: boolean;
 }
 
 function getMsgStyle(msg: string) {
@@ -70,14 +75,14 @@ async function getClusterNodes(): Promise<ClusterNode[]> {
       await pb.update(0);
       await pb.finish();
       console.error(
-        colors.red(`Error fetching cluster nodes: ${error.message}`)
+        colors.red(`Error fetching cluster nodes: ${error.message}`),
       );
     }
     throw error;
   }
 }
 
-async function getVoteAccounts(): Promise<string[]> {
+async function getVoteAccounts() {
   const requestBody = {
     jsonrpc: "2.0",
     id: 1,
@@ -95,7 +100,12 @@ async function getVoteAccounts(): Promise<string[]> {
   }
 
   const data = await response.json();
-  return data.result.current.map((account: VoteAccount) => account.nodePubkey);
+  const activatedStake: Record<string, number> = {};
+  const validatorPubkeys = data.result.current.map((account: VoteAccount) => {
+    activatedStake[account.nodePubkey] = account.activatedStake;
+    return account.nodePubkey;
+  });
+  return { validatorPubkeys, activatedStake };
 }
 
 async function getIPInfo(ip: string, apiKey: string): Promise<IPInfo> {
@@ -109,17 +119,17 @@ async function main() {
   if (!apiKey) {
     console.error(
       colors.red(
-        "IPINFO_API_KEY environment variable is required to run this script.\nPlease visit https://ipinfo.io/signup to get an API key."
-      )
+        "IPINFO_API_KEY environment variable is required to run this script.\nPlease visit https://ipinfo.io/signup to get an API key.",
+      ),
     );
     return;
   }
 
   try {
     const nodes = await getClusterNodes();
-    const validatorPubkeys = await getVoteAccounts();
+    const { validatorPubkeys, activatedStake } = await getVoteAccounts();
     const validNodes = nodes.filter(
-      (node) => node.gossip && validatorPubkeys.includes(node.pubkey)
+      (node) => node.gossip && validatorPubkeys.includes(node.pubkey),
     );
 
     const pb = new ProgressBar({
@@ -128,7 +138,7 @@ async function main() {
       ...getMsgStyle("Fetching IP data"),
     });
 
-    const ipInfoData: IPInfo[] = [];
+    const validatorData: ValidatorData[] = [];
     let processed = 0;
     let errors = 0;
 
@@ -144,7 +154,7 @@ async function main() {
             const ip = node.gossip.split(":")[0];
             const info = await getIPInfo(ip, apiKey);
 
-            ipInfoData.push({
+            validatorData.push({
               ip: info.ip,
               city: info.city || "Unknown",
               region: info.region || "Unknown",
@@ -153,6 +163,8 @@ async function main() {
               org: info.org || "Unknown",
               timezone: info.timezone || "Unknown",
               pubkey: node.pubkey,
+              activatedStake: activatedStake[node.pubkey],
+              rpc: !!node.rpc,
             });
           } catch {
             errors++;
@@ -160,7 +172,7 @@ async function main() {
             processed++;
             await pb.update(processed);
           }
-        })
+        }),
       );
     }
     await pb.finish();
@@ -182,10 +194,15 @@ async function main() {
       "Hosting",
       "Timezone",
       "Pubkey",
-    ];
+      "ActivatedStake",
+      "RPC"
+    ];    
 
     const csvRows = [csvHeaders.join(",")];
-    for (const data of ipInfoData) {
+    const sortedValidatorData = validatorData.sort((a, b) =>
+      a.pubkey.localeCompare(b.pubkey)
+    );
+    for (const data of sortedValidatorData) {
       const row = [
         data.ip,
         data.city.replace(/,/g, " "),
@@ -195,6 +212,8 @@ async function main() {
         data.org.replace(/,/g, " "),
         data.timezone.replace(/,/g, " "),
         data.pubkey,
+        data.activatedStake,
+        data.rpc,
       ];
       csvRows.push(row.join(","));
     }
@@ -212,28 +231,12 @@ async function main() {
     await csvPb.finish();
 
     console.log("\n" + colors.bold("Summary:"));
-    console.log(
-      `${colors.green("✓")} Total nodes retrieved: ${colors.bold(
-        String(nodes.length)
-      )}`
-    );
-    console.log(
-      `${colors.green("✓")} Validator nodes: ${colors.bold(
-        String(validNodes.length)
-      )}`
-    );
-    console.log(
-      `${colors.green("✓")} Successfully geolocated IPs: ${colors.bold(
-        String(ipInfoData.length)
-      )}`
-    );
+    console.log(`${colors.green("✓")} Total nodes retrieved: ${colors.bold(String(nodes.length))}`);
+    console.log(`${colors.green("✓")} Validator nodes: ${colors.bold(String(validNodes.length))}`);
+    console.log(`${colors.green("✓")} Successfully geolocated IPs: ${colors.bold(String(validatorData.length))}`);
 
-    if (ipInfoData.length < validNodes.length) {
-      console.log(
-        `${colors.yellow("!")} Failed to process: ${colors.bold(
-          String(validNodes.length - ipInfoData.length)
-        )} nodes`
-      );
+    if (validatorData.length < validNodes.length) {
+      console.log(`${colors.yellow("!")} Failed to process: ${colors.bold(String(validNodes.length - validatorData.length))} nodes`);
     }
   } catch (error) {
     if (error instanceof Error) {

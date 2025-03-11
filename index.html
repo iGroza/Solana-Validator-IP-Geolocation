@@ -10,6 +10,7 @@
       name="description"
       content="Visualize Solana validators' geographical distribution with interactive maps and charts. Download the latest CSV data and explore validator statistics."
     />
+    <meta name="keywords" content="Solana, Validators, Visualization, Geographical Distribution, Interactive Maps, Charts, CSV Data, Validator Statistics" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -29,107 +30,223 @@
         padding: 0;
         box-sizing: border-box;
       }
+      
+      :root {
+        --bg-primary: #121212;
+        --bg-secondary: #1e1e1e;
+        --bg-tertiary: #252525;
+        --text-primary: #ffffff;
+        --text-secondary: #b3b3b3;
+        --accent-primary: #9945FF;
+        --accent-secondary: #14F195;
+        --border-color: #333333;
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        --hover-color: #2a2a2a;
+      }
+      
       body {
-        font-family: Arial, sans-serif;
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
         line-height: 1.6;
         padding: 20px;
-        background-color: #fff;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
       }
+      
       header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--border-color);
       }
+      
       .header-title {
         display: flex;
         flex-direction: column;
       }
+      
+      h1 {
+        font-weight: 700;
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+        background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+      
+      p {
+        color: var(--text-secondary);
+      }
+      
       .header-buttons {
         display: flex;
-        gap: 10px;
+        gap: 12px;
       }
+      
       .button {
         padding: 10px 20px;
-        background-color: #333;
-        color: #fff;
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
         text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
+      
       .button:hover {
-        background-color: #555;
+        background-color: var(--hover-color);
+        transform: translateY(-2px);
+        box-shadow: var(--card-shadow);
       }
+      
       .download-btn {
-        background-color: #4caf50;
+        background-color: var(--accent-secondary);
+        color: #000;
+        border: none;
       }
+      
       .download-btn:hover {
-        background-color: #45a049;
+        background-color: #12d985;
+        color: #000;
       }
+      
       #statistics {
         margin-bottom: 40px;
       }
+      
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(222px, 1fr));
+        gap: 15px;
       }
+      
       .stat-item {
-        background-color: #f9f9f9;
-        padding: 10px;
-        border-radius: 5px;
+        background-color: var(--bg-secondary);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--card-shadow);
+        transition: transform 0.3s ease;
+        border: 1px solid var(--border-color);
       }
+      
+      .stat-item:hover {
+        transform: translateY(-5px);
+      }
+      
       .stat-label {
-        font-weight: bold;
+        font-weight: 600;
+        color: var(--text-secondary);
+        display: block;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        text-transform: uppercase;
       }
+      
+      .stat-item span:not(.stat-label) {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--accent-primary);
+      }
+      
       #map {
-        height: 50vh;
-        margin-bottom: 40px;
+        height: 60vh;
+        margin-bottom: 50px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        border: 1px solid var(--border-color);
       }
+      
       .chart {
-        max-width: 800px;
-        margin: 0 auto 40px;
+        max-width: 900px;
+        margin: 0 auto 60px;
+        background-color: var(--bg-secondary);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: var(--card-shadow);
+        border: 1px solid var(--border-color);
       }
-      #share {
-        margin-top: 20px;
+      
+      section {
+        margin-bottom: 50px;
       }
-      #share a {
-        margin-right: 10px;
-        padding: 8px 16px;
-        background-color: #333;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
+      
+      section h1 {
+        font-size: 1.8rem;
+        margin: 0 0 20px 0;
+        text-align: center;
       }
-      #share a:hover {
-        background-color: #555;
+      
+      section h3 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: var(--text-secondary);
       }
+      
       footer {
         text-align: center;
-        padding: 10px;
-        background-color: #333;
-        color: #fff;
-        margin-top: 20px;
+        padding: 20px;
+        margin-top: 50px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
       }
+      
       @media (max-width: 768px) {
         header {
           flex-direction: column;
           align-items: flex-start;
         }
+        
         .header-buttons {
-          margin-top: 10px;
-          flex-direction: column;
+          margin-top: 15px;
           width: 100%;
         }
-        .header-buttons a {
-          width: 100%;
-          text-align: center;
+        
+        .button {
+          flex: 1;
+          justify-content: center;
         }
+        
+        h1 {
+          font-size: 1.8rem;
+        }
+        
         .stats-grid {
           grid-template-columns: 1fr;
         }
+      }
+      
+      /* Chart customization */
+      canvas {
+        max-height: 400px;
+      }
+      
+      /* Leaflet map customization */
+      .leaflet-container {
+        background-color: #0a0a0a !important;
+      }
+      
+      .leaflet-popup-content-wrapper {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+      
+      .leaflet-popup-tip {
+        background-color: var(--bg-secondary);
       }
     </style>
   </head>
@@ -147,59 +264,82 @@
         <a
           href="https://github.com/iGroza/Solana-Validator-IP-Geolocation"
           class="button"
-          >View on GitHub</a
+          ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C18.2072 22.5807 20.2772 21.0497 21.7437 19.0074C23.2101 16.965 23.9993 14.5143 24 12C24 5.37 18.63 0 12 0Z" fill="currentColor"/>
+          </svg>View on GitHub</a
         >
         <a href="solana_validators.csv" download class="button download-btn"
-          >Download CSV</a
+          ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16L7 11H10V4H14V11H17L12 16Z" fill="currentColor"/>
+            <path d="M20 18H4V11H2V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V11H20V18Z" fill="currentColor"/>
+          </svg>Download CSV</a
         >
       </div>
     </header>
     <main>
       <section id="statistics">
-        <h2>Validator Statistics</h2>
+        <h3>Validator Statistics</h3>
         <div class="stats-grid">
           <div class="stat-item">
-            <span class="stat-label">Total validators:</span>
+            <span class="stat-label">Total staked (SOL)</span>
+            <span id="total-staked"></span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Total validators</span>
             <span id="total-validators"></span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Unique cities:</span>
+            <span class="stat-label">Unique cities</span>
             <span id="unique-cities"></span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Unique regions:</span>
+            <span class="stat-label">Unique regions</span>
             <span id="unique-regions"></span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Unique hosting providers:</span>
+            <span class="stat-label">Unique hosting providers</span>
             <span id="unique-hosting"></span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Unique countries:</span>
+            <span class="stat-label">Unique countries</span>
             <span id="unique-countries"></span>
           </div>
         </div>
       </section>
       <section id="map-section">
-        <h2>Geographical Distribution of Validators</h2>
+        <h3>Geographical Distribution of Validators</h3>
         <div id="map"></div>
       </section>
       <section id="charts">
         <div class="chart">
-          <h2>Top 10 Cities</h2>
+          <h1>Validators Count</h1>
+          <h3>Top 10 Cities</h3>
           <canvas id="city-chart"></canvas>
         </div>
         <div class="chart">
-          <h2>Top 10 Regions</h2>
+          <h3>Top 10 Regions</h3>
           <canvas id="region-chart"></canvas>
         </div>
         <div class="chart">
-          <h2>Top 10 Hosting Providers</h2>
+          <h3>Top 10 Hosting Providers</h3>
           <canvas id="hosting-chart"></canvas>
         </div>
         <div class="chart">
-          <h2>Top 10 Countries</h2>
+          <h3>Top 10 Countries</h3>
           <canvas id="country-chart"></canvas>
+        </div>
+        <div class="chart">
+          <h1>SOL Staking</h1>
+          <h3>Top 10 Countries by Activated Stake</h3>
+          <canvas id="country-stake-chart"></canvas>
+        </div>
+        <div class="chart">
+          <h3>Top 10 Regions by Activated Stake</h3>
+          <canvas id="region-stake-chart"></canvas>
+        </div>
+        <div class="chart">
+          <h3>Top 10 Hosting Providers by Activated Stake</h3>
+          <canvas id="hosting-stake-chart"></canvas>
         </div>
       </section>
     </main>
@@ -210,19 +350,60 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
+      // Set dark mode for Chart.js
+      Chart.defaults.color = '#b3b3b3';
+      Chart.defaults.borderColor = '#333333';
+      
+      const LAMPORTS_PER_SOL = 1000000000;
+      
       document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById(
           "footer"
         ).textContent = `© ${new Date().getFullYear()} Powered with ♥️ by iGroza`;
-        const { timestamp } = await fetch("https://igroza.github.io/Solana-Validator-IP-Geolocation/last_update.json").then((r) =>
-          r.json()
-        );
-        document.getElementById(
-          "last-update"
-        ).textContent = `Last update: ${new Date(timestamp).toDateString()}`;
+        
+        try {
+          const { timestamp } = await fetch(
+            "https://igroza.github.io/Solana-Validator-IP-Geolocation/last_update.json"
+          ).then((r) => r.json());
+          document.getElementById(
+            "last-update"
+          ).textContent = `Last update: ${new Date(timestamp).toDateString()}`;
+        } catch (error) {
+          console.error("Error fetching last update:", error);
+          document.getElementById("last-update").textContent = "Last update: Data unavailable";
+        }
       });
+      
+      const chartColors = {
+        backgroundColor: [
+          'rgba(153, 69, 255, 0.5)',
+          'rgba(20, 241, 149, 0.5)',
+          'rgba(255, 102, 102, 0.5)',
+          'rgba(54, 162, 235, 0.5)',
+          'rgba(255, 206, 86, 0.5)',
+          'rgba(75, 192, 192, 0.5)',
+          'rgba(153, 102, 255, 0.5)',
+          'rgba(255, 159, 64, 0.5)',
+          'rgba(199, 199, 199, 0.5)',
+          'rgba(83, 102, 255, 0.5)',
+        ],
+        borderColor: [
+          'rgba(153, 69, 255, 1)',
+          'rgba(20, 241, 149, 1)',
+          'rgba(255, 102, 102, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(199, 199, 199, 1)',
+          'rgba(83, 102, 255, 1)',
+        ]
+      };
+      
       d3.csv("solana_validators.csv")
         .then(function (data) {
+          document.getElementById("total-staked").textContent = (data.reduce((acc, curr) => acc + Number(curr.ActivatedStake), 0) / LAMPORTS_PER_SOL).toLocaleString({});
           document.getElementById("total-validators").textContent = data.length;
           document.getElementById("unique-cities").textContent = new Set(
             data.map((d) => d.City)
@@ -236,23 +417,39 @@
           document.getElementById("unique-countries").textContent = new Set(
             data.map((d) => d.Country)
           ).size;
+          
+          // Initialize map with dark style
           const map = L.map("map").setView([0, 0], 2);
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution:
-              '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
           }).addTo(map);
+          
+          // Custom marker icon
+          const solanaIcon = L.divIcon({
+            html: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" fill="#9945FF" opacity="0.8" />
+                    <circle cx="12" cy="12" r="5" fill="#14F195" />
+                  </svg>`,
+            className: '',
+            iconSize: [24, 24],
+            iconAnchor: [12, 12]
+          });
+          
           data.forEach(function (row) {
             if (row.Loc) {
               const [lat, lon] = row.Loc.split(" ").map(Number);
               if (!isNaN(lat) && !isNaN(lon)) {
-                L.marker([lat, lon])
+                L.marker([lat, lon], {icon: solanaIcon})
                   .addTo(map)
                   .bindPopup(
-                    `City: ${row.City}<br>Region: ${row.Region}<br>Hosting: ${row.Hosting}`
+                    `<strong>City:</strong> ${row.City}<br><strong>Region:</strong> ${row.Region}<br><strong>Hosting:</strong> ${row.Hosting}`
                   );
               }
             }
           });
+          
           function countFrequency(data, column) {
             const frequency = {};
             data.forEach(function (row) {
@@ -261,12 +458,51 @@
             });
             return frequency;
           }
+          
+          function sumActivatedStake(data, column) {
+            const stakeSum = {};
+            data.forEach(function (row) {
+              let value = row[column] || "Unknown";
+              let stake = parseInt(row.ActivatedStake) || 0;
+              stakeSum[value] = (stakeSum[value] || 0) + stake;
+            });
+            return stakeSum;
+          }
+          
+          // Common chart options
+          const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)'
+                }
+              },
+              x: {
+                grid: {
+                  color: 'rgba(255, 255, 255, 0.1)'
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                labels: {
+                  color: '#b3b3b3'
+                }
+              }
+            }
+          };
+          
+          // City chart
           const cityFrequency = countFrequency(data, "City");
           const sortedCities = Object.entries(cityFrequency)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 10);
           const cityLabels = sortedCities.map((d) => d[0]);
           const cityData = sortedCities.map((d) => d[1]);
+          
           new Chart(document.getElementById("city-chart").getContext("2d"), {
             type: "bar",
             data: {
@@ -275,28 +511,23 @@
                 {
                   label: "Number of Validators",
                   data: cityData,
-                  backgroundColor: "rgba(75, 192, 192, 0.2)",
-                  borderColor: "rgba(75, 192, 192, 1)",
+                  backgroundColor: chartColors.backgroundColor,
+                  borderColor: chartColors.borderColor,
                   borderWidth: 1,
                 },
               ],
             },
-            options: {
-              scales: { y: { beginAtZero: true } },
-              plugins: {
-                title: {
-                  display: true,
-                  text: "Top 10 Cities by Number of Validators",
-                },
-              },
-            },
+            options: chartOptions
           });
+          
+          // Region chart
           const regionFrequency = countFrequency(data, "Region");
           const sortedRegions = Object.entries(regionFrequency)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 10);
           const regionLabels = sortedRegions.map((d) => d[0]);
           const regionData = sortedRegions.map((d) => d[1]);
+          
           new Chart(document.getElementById("region-chart").getContext("2d"), {
             type: "bar",
             data: {
@@ -305,28 +536,28 @@
                 {
                   label: "Number of Validators",
                   data: regionData,
-                  backgroundColor: "rgba(153, 102, 255, 0.2)",
-                  borderColor: "rgba(153, 102, 255, 1)",
+                  backgroundColor: chartColors.backgroundColor,
+                  borderColor: chartColors.borderColor,
                   borderWidth: 1,
                 },
               ],
             },
-            options: {
-              scales: { y: { beginAtZero: true } },
-              plugins: {
-                title: {
-                  display: true,
-                  text: "Top 10 Regions by Number of Validators",
-                },
-              },
-            },
+            options: chartOptions
           });
+          
+          // Hosting providers chart
           const hostingFrequency = countFrequency(data, "Hosting");
           const sortedHosting = Object.entries(hostingFrequency)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 10);
           const hostingLabels = sortedHosting.map((d) => d[0]);
           const hostingData = sortedHosting.map((d) => d[1]);
+          
+          const horizontalOptions = {
+            ...chartOptions,
+            indexAxis: 'y'
+          };
+          
           new Chart(document.getElementById("hosting-chart").getContext("2d"), {
             type: "bar",
             data: {
@@ -335,29 +566,23 @@
                 {
                   label: "Number of Validators",
                   data: hostingData,
-                  backgroundColor: "rgba(255, 159, 64, 0.2)",
-                  borderColor: "rgba(255, 159, 64, 1)",
+                  backgroundColor: chartColors.backgroundColor,
+                  borderColor: chartColors.borderColor,
                   borderWidth: 1,
                 },
               ],
             },
-            options: {
-              indexAxis: "y",
-              scales: { x: { beginAtZero: true } },
-              plugins: {
-                title: {
-                  display: true,
-                  text: "Top 10 Hosting Providers by Number of Validators",
-                },
-              },
-            },
+            options: chartOptions
           });
+          
+          // Countries chart
           const countryFrequency = countFrequency(data, "Country");
           const sortedCountries = Object.entries(countryFrequency)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 10);
           const countryLabels = sortedCountries.map((d) => d[0]);
           const countryData = sortedCountries.map((d) => d[1]);
+          
           new Chart(document.getElementById("country-chart").getContext("2d"), {
             type: "bar",
             data: {
@@ -366,25 +591,111 @@
                 {
                   label: "Number of Validators",
                   data: countryData,
-                  backgroundColor: "rgba(54, 162, 235, 0.2)",
-                  borderColor: "rgba(54, 162, 235, 1)",
+                  backgroundColor: chartColors.backgroundColor,
+                  borderColor: chartColors.borderColor,
                   borderWidth: 1,
                 },
               ],
             },
-            options: {
-              scales: { y: { beginAtZero: true } },
-              plugins: {
-                title: {
-                  display: true,
-                  text: "Top 10 Countries by Number of Validators",
-                },
-              },
-            },
+            options: chartOptions
           });
+          
+          // Country stake chart
+          const countryStakeSum = sumActivatedStake(data, "Country");
+          const sortedCountryStake = Object.entries(countryStakeSum)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const countryStakeLabels = sortedCountryStake.map((d) => d[0]);
+          const countryStakeData = sortedCountryStake.map(
+            (d) => d[1] / LAMPORTS_PER_SOL
+          );
+          
+          new Chart(
+            document.getElementById("country-stake-chart").getContext("2d"),
+            {
+              type: "bar",
+              data: {
+                labels: countryStakeLabels,
+                datasets: [
+                  {
+                    label: "Activated Stake (SOL)",
+                    data: countryStakeData,
+                    backgroundColor: chartColors.backgroundColor,
+                    borderColor: chartColors.borderColor,
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: chartOptions
+            }
+          );
+          
+          // Region stake chart
+          const regionStakeSum = sumActivatedStake(data, "Region");
+          const sortedRegionStake = Object.entries(regionStakeSum)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const regionStakeLabels = sortedRegionStake.map((d) => d[0]);
+          const regionStakeData = sortedRegionStake.map(
+            (d) => d[1] / LAMPORTS_PER_SOL
+          );
+          
+          new Chart(
+            document.getElementById("region-stake-chart").getContext("2d"),
+            {
+              type: "bar",
+              data: {
+                labels: regionStakeLabels,
+                datasets: [
+                  {
+                    label: "Activated Stake (SOL)",
+                    data: regionStakeData,
+                    backgroundColor: chartColors.backgroundColor,
+                    borderColor: chartColors.borderColor,
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: chartOptions
+            }
+          );
+          
+          // Hosting providers stake chart
+          const hostingStakeSum = sumActivatedStake(data, "Hosting");
+          const sortedHostingStake = Object.entries(hostingStakeSum)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+          const hostingStakeLabels = sortedHostingStake.map((d) => d[0]);
+          const hostingStakeData = sortedHostingStake.map(
+            (d) => d[1] / LAMPORTS_PER_SOL
+          );
+          
+          new Chart(
+            document.getElementById("hosting-stake-chart").getContext("2d"),
+            {
+              type: "bar",
+              data: {
+                labels: hostingStakeLabels,
+                datasets: [
+                  {
+                    label: "Activated Stake (SOL)",
+                    data: hostingStakeData,
+                    backgroundColor: chartColors.backgroundColor,
+                    borderColor: chartColors.borderColor,
+                    borderWidth: 1,
+                  },
+                ],
+              },
+              options: chartOptions
+            }
+          );
         })
         .catch(function (error) {
           console.error("Error loading CSV file:", error);
+          document.body.innerHTML += `<div style="text-align: center; padding: 20px; background-color: rgba(255, 0, 0, 0.1); color: #ff6b6b; border-radius: 10px; margin: 20px auto; max-width: 600px;">
+            <h3>Error Loading Data</h3>
+            <p>Could not load the Solana validators data. Please check your connection and try again.</p>
+          </div>`;
         });
     </script>
   </body>
