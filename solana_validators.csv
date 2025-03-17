@@ -16,6 +16,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 64.130.53.84,Bluffdale,Utah,US,40.4897 -111.9388,AS20326 TeraSwitch Networks Inc.,America/Denver,23U4mgK9DMCxsv2StC4y2qAptP25Xv5b2cybKCeJ1to3,167767312236990,false
 174.138.185.242,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,245B9WFHUGuWycSXHagHXwsXGcxDkNYfxWBaeh7vAHDU,106326282678031,false
 134.119.188.33,Strasbourg,Grand Est,FR,48.5839 7.7455,AS29066 velia.net Internetdienste GmbH,Europe/Paris,24xpPUt82of7pcmy3qDvRQjCfaj7DaEiM3D4UDEYr3y4,19015528687760,false
+64.130.63.21,London,England,GB,51.5085 -0.1257,AS20326 TeraSwitch Networks Inc.,Europe/London,29r4yNFTEczzMxLN39jPj59dZZjLZdr5p1HyjQC5Wvnu,88537289987650,false
 136.244.69.252,London,England,GB,51.5085 -0.1257,AS20473 The Constant Company  LLC,Europe/London,2abwQG3v2xRemFxRszVHSfnjJNe9zu5X8duKgxjyLeaK,15242305819538,false
 155.138.205.169,Atlanta,Georgia,US,33.7865 -84.4454,AS20473 The Constant Company  LLC,America/New_York,2AKKnirWVZMhnzuwqpizw9SwfZjGpRFLx2zCCNtPWpbc,139910920292070,true
 57.129.36.139,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS16276 OVH SAS,Europe/Berlin,2Ce1dmtdnvgDwD1MiZjP9wwGup6j8H7uXGuGMa9uZo5v,24587612165166,false
@@ -50,14 +51,13 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 91.189.180.150,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,2oHzvvTsW5A2pLpyUSiT5P19CCvE81RAtSgWQXu6x9b8,19015240577634,false
 107.182.163.6,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,2oujYrRmtDDTF3b3JUgsZ34TkcyrozMjgRHBQE9R6K8i,18962590553962,false
 80.77.175.66,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,2owZqEAQvSWxKixL1MPtQ5Xivr8hkQBuURvEvJBv9wmU,25138270176079,false
-64.185.230.98,Los Angeles,California,US,34.0522 -118.2437,AS18450 WebNX  Inc.,America/Los_Angeles,2oygbVMTfRmUykKM7ZnRiPs2RRnX1TpdTy1LhH2rxF18,46595914269,false
 185.26.11.193,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,2P9ZYA4vBoBBr56hrEFTmrd5ctuz3r7wtvRYmbgk6jRL,186063201739529,false
 162.216.112.10,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,2PawEGWYNpMF6a9daRSVbUgWZw3PkLeY5VR31sKu5MYx,18932472792357,false
 213.163.64.131,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,2Q3t4UqyZeVZQ5WURvuGVb73x8cwbu5M7jNbb1jEvGsB,18944119177482,false
 64.176.65.173,Warsaw,Mazovia,PL,52.2298 21.0118,AS20473 The Constant Company  LLC,Europe/Warsaw,2Rv9npqdWE1mLPsT1r2obn3xtKmA5afkxt8GsWeLnKoc,74517657198514,true
 94.181.45.123,Chelyabinsk,Chelyabinsk,RU,55.1540 61.4291,AS41661 JSC "ER-Telecom Holding",Asia/Yekaterinburg,2RwFJJkhr4tCTuQnZN1CFpAtn5s9pTzakagvu326W1FT,29343043638632,false
 109.94.97.37,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,2swwdmPFEPFUJ38nJbJJBA9kKooJzaeUZBJ9o1mYHepc,85203022555711,false
-213.163.64.151,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,2t53LvZfskcpXkdwLaBnfZLbNgyVHPu2BNFpcRBaEBhM,63289473712442,false
+95.179.211.165,Aubervilliers,Île-de-France,FR,48.9167 2.3833,AS20473 The Constant Company  LLC,Europe/Paris,2t53LvZfskcpXkdwLaBnfZLbNgyVHPu2BNFpcRBaEBhM,63289473712442,false
 192.69.220.130,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,2tKR4mX7LzhjfdNsR6HfBaDDh2RM3wdpUrJqUU42aJTc,21626892260451,false
 45.134.108.188,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,2UBhtRuyr9nvWsUnrbWrvJiYWEU8TVBD4PLYQJKiRa9H,158351420165178,false
 84.32.186.112,Amsterdam,North Holland,NL,52.3740 4.8897,AS59642 UAB Cherry Servers,Europe/Amsterdam,2Ue9zGmDnvYRrJNEjuAdNkbbickw6fKWtbeNM7T2rakg,66047900053749,false
@@ -86,9 +86,11 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 173.231.55.74,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,32jCuWyy4aJjyv4gd4DSGBHmFU5KUSSfqbmPb9GpMin6,21293980604701,false
 162.19.77.80,Strasbourg,Grand Est,FR,48.5839 7.7455,AS16276 OVH SAS,Europe/Paris,34C9C4zhnjbExNcYzdYZyPccMAMdsfqKLDS5jkqcbUow,87565416556330,false
 70.36.99.128,Los Angeles,California,US,34.0522 -118.2437,AS22439 Perfect International  Inc,America/Los_Angeles,34Eegy89hWD8HskhX8GzkkrEgdWDAAsTd5ZPKPHs6pBN,43207617574512,false
+173.231.62.130,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,34v7TexfK4a6onLDKx6UzEn1655HPb5xHcucGJCdNYB8,20392008335665,false
 62.113.194.234,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,3ARtLeVB83RoGAwRot8dh74pc2uqbPi6JwbkwDzqk91m,18848382465264,false
 51.178.97.132,Calais,Hauts-de-France,FR,50.9519 1.8563,AS16276 OVH SAS,Europe/Paris,3B2mGaZoFwzAnWCoZ4EAKdps4FbYbDKQ48jo8u1XWynU,679201286489513,false
 91.189.181.114,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,3BeharBd3j4sKQp7Qze27JLQLd9AEEwGTX9TC7dXYSNw,30151671995367,false
+45.77.158.93,Piscataway,New Jersey,US,40.4993 -74.3990,AS20473 The Constant Company  LLC,America/New_York,3C2cXXVHCm2w2EWnHUNxhtZCB2EMv2AeJ4TpW5ws18fi,231645855785401,false
 45.77.3.223,Santa Clara,California,US,37.3924 -121.9623,AS20473 The Constant Company  LLC,America/Los_Angeles,3CKKAoVi94EnfX8QcVxEmk8CAvZTc6nAYzXp1WkSUofX,19040126663955,false
 45.129.84.92,Lelystad,Flevoland,NL,52.5083 5.4750,AS206264 Amarutu Technology Ltd,Europe/Amsterdam,3DaPk6TdeGnEBwTR8fEyZSLkdayk6vZXrqGZhAgYK8BV,212092215752137,false
 217.170.207.134,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,3ddX9QcC6DjFqPTysrFWtR48v5g3wJjB862sji4s5Tui,18974254312514,false
@@ -106,6 +108,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 70.34.254.112,Warsaw,Mazovia,PL,52.2298 21.0118,AS20473 The Constant Company  LLC,Europe/Warsaw,3kiyzZdvgkxhkef8v8cgbWe7JJ6a7NyNDpXMPnEUpb7x,26335108257669,false
 195.14.6.38,Bucharest,București,RO,44.4323 26.1063,AS41536 01NODE FUNDING SRL,Europe/Bucharest,3KNGMiXwhy2CAWVNpLoUt25sNngFnX1mZpaiEeVccBA6,61436595997667,true
 46.181.127.197,Kemerovo,Kuzbass,RU,55.3333 86.0833,AS39927 E-Light-Telecom Ltd.,Asia/Novokuznetsk,3KW9MzaoUrqXymwZKMph4kPaJ37JfCfw8LxsZnHnCBGS,21910047484835,false
+89.222.171.194,Moscow,Moscow,RU,55.7522 37.6156,AS34123 Netorn LLC,Europe/Moscow,3Kzdcmu6yWE4AEhFdxAoWncLijpwzNB95JThHRXzvf5k,178074331079705,false
 2.57.214.63,Lelystad,Flevoland,NL,52.5083 5.4750,AS206264 Amarutu Technology Ltd,Europe/Amsterdam,3L7DRu7kTxNX1X73KxUDGeKjtHEhN1fd3cfBzK9QhH6c,3798658878505,false
 134.119.192.235,Strasbourg,Grand Est,FR,48.5839 7.7455,AS29066 velia.net Internetdienste GmbH,Europe/Paris,3LKjD9Cb8RKKbmwM3LphHEvfZdjEU4rAFGDDUiVnuXhJ,3504176727726,false
 64.130.53.83,Bluffdale,Utah,US,40.4897 -111.9388,AS20326 TeraSwitch Networks Inc.,America/Denver,3MVdbyD3niYjAj1uskREY5UsxqNj4nvPHn8fCMahdM71,84103322747031,false
@@ -114,7 +117,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 45.143.196.102,Solihull,England,GB,52.4143 -1.7809,AS212027 Daniel Jackson,Europe/London,3raZLZE6gqVDAHDqTkJfQ8eWPAMZpWgKLJP3TZKD5iVh,67755670919249,false
 193.46.0.168,London,England,GB,51.5085 -0.1257,AS9087 Rackdog  LLC,Europe/London,3RbsAuNknCTXuLyqmasnvYRpQg3MfWZ5N7WTi7ZGqdms,77649060631047,false
 46.166.162.132,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,3rqEEEGjHRyndHuduBcjkf17rX3hgmGACpYTQYeZ5Ltk,46699177477969,false
-216.128.145.225,Elk Grove Village,Illinois,US,42.0076 -87.9931,AS20473 The Constant Company  LLC,America/Chicago,3Rv6ZVGUuRczP76322LyhTTYw2iM4avV4B5xFJocQJer,219092819454912,true
+199.91.64.18,Los Angeles,California,US,34.0559 -118.2666,AS29802 HIVELOCITY  Inc.,America/Los_Angeles,3Rv6ZVGUuRczP76322LyhTTYw2iM4avV4B5xFJocQJer,219092819454912,true
 5.199.172.167,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,3RXKQBRv7xKTQeNdLSPhCiD4QcUfxEQ12rtgUkMf5LnS,413021118947097,false
 103.50.32.202,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,3s97yjq2MhoPVPC3U9VeE3Z5S643Pweovg88ysvrQPw5,335413814402339,false
 91.189.181.102,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,3sEWErVW8kK2frAk1KZQ5p3YZt1vzL6Pb6dTZJRVSPpz,213046472465378,false
@@ -160,6 +163,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 57.128.229.13,Warsaw,Mazovia,PL,52.2284 21.0522,AS16276 OVH SAS,Europe/Warsaw,4FozAhZhAo8ZTuzNHeAHMDDLqWmRwioWBhFqybZYHamV,62265758602933,false
 172.96.160.87,Los Angeles,California,US,34.0614 -118.2385,AS23470 ReliableSite.Net LLC,America/Los_Angeles,4guS5XP2wgDWecZGgvN5UQmV8iywTrKGaA7kv9hj3tk7,32779315864443,false
 86.109.8.239,Atlanta,Georgia,US,33.7490 -84.3880,AS54825 Packet Host  Inc.,America/New_York,4J9HoqBamEDyEKGDZgeRjCpiGCirHzqP1CadWmznrghF,18938008128112,false
+64.130.50.51,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,4JahMMrVRS1gimWoXpD5H6KwKc2MrsoTDFMaStMttL1E,78350244911426,false
 91.134.4.70,Lille,Hauts-de-France,FR,50.6330 3.0586,AS16276 OVH SAS,Europe/Paris,4JryygoiM1j324fYkeBzcQDcwRfd2WpgkEzUePFj1rJY,79251733918992,false
 38.55.75.19,Ashburn,Virginia,US,39.0437 -77.4875,AS397423 Tier.Net Technologies LLC,America/New_York,4JTfCRjd6SzZdoKqdvStHvaKHBYCe9iENAnG4iDTrGW2,18969550135986,false
 216.18.207.90,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,4K8TQcYHjzKyHvReuoPT4pboENga8dYm3SwdgX3UkKVN,19309177507900,false
@@ -247,6 +251,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 169.197.88.98,New York City,New York,US,40.7143 -74.0060,AS26548 PureVoltage Hosting Inc.,America/New_York,5sQqxRuoBT17zbpSMwbcaRxZX2u3ZjfTKC5RAkspEwXi,20204827717513,false
 107.182.162.210,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,5t4shVsKnUqgjmhK3fFNsvyju2E6Rd7cc4S5pmqqEVEW,20814713998047,true
 64.130.52.46,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,5tfcGyf3NQFcufDigvbRt9kWoVN2KPEkBRUY3UaC3Zwm,56225702449944,false
+145.40.87.123,Seoul,Seoul,KR,37.5660 126.9784,AS54825 Packet Host  Inc.,Asia/Seoul,5tFvFBWUPt94HQuZyMSuHnpcHrjMPLrTg8WBbv9G5VqU,8362805879097,false
 91.134.60.98,Calais,Hauts-de-France,FR,50.9519 1.8563,AS16276 OVH SAS,Europe/Paris,5TqMpx4wDLRn7qNaNxJ1bsznrqAhF9meoxcpdY2Bc6Es,48622544425218,false
 185.189.44.172,Stockholm,Stockholm,SE,59.3294 18.0687,AS214159 UAB Cherry Servers,Europe/Stockholm,5Us18hLZPXJTS4QVuGSsUw137Dyd2tgBaem24Xsf5nBS,1207979324901175,false
 54.38.148.109,City of London,England,GB,51.5128 -0.0918,AS16276 OVH SAS,Europe/London,5VrW7YNBccVnhnZVmooCePdLFcs2UjfxRT3hoY9mN8Ec,243804719984407,false
@@ -285,7 +290,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 148.113.187.6,Montréal,Quebec,CA,45.5088 -73.5878,AS16276 OVH SAS,America/Toronto,6M53yM6dsE6hiaHgxWvYa4fsfzQTGyAZn7rM6JrzbqJV,268785654042567,false
 31.128.59.203,Moscow,Moscow,RU,55.7522 37.6156,AS215457 DCS LLC,Europe/Moscow,6m5vsg6XfsVUroo1zzZmB4YgFmV6ykLiwEXb6choovpc,95655001774045,false
 64.176.11.26,Santiago,Santiago Metropolitan,CL,-33.4569 -70.6483,AS20473 The Constant Company  LLC,America/Santiago,6m8Dbox8xfp4iB1FWonNaLnJWm871QRUCY3UifD571qA,68383837124505,false
-185.221.164.109,Moscow,Moscow,RU,55.7522 37.6156,AS199546 Moscomnet LLC,Europe/Moscow,6mCzwUFcdTuz6fFJRA8nY1iXNRJqPpXU1PvCfANfVXhh,19028939954312,false
+31.128.59.211,Moscow,Moscow,RU,55.7522 37.6156,AS215457 DCS LLC,Europe/Moscow,6mCzwUFcdTuz6fFJRA8nY1iXNRJqPpXU1PvCfANfVXhh,19028939954312,false
 80.77.161.209,Podolsk,Moscow Oblast,RU,55.4242 37.5547,AS51369 LLC "TRC FIORD",Europe/Moscow,6MMvVR2UqSkHz5Drt4mmpaS3DBv8kvcrFuKh4sWNGCqD,23538654393800,false
 108.171.210.195,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,6NDen7aDi65apHo8m1Vea4nuS6LyjQeM6pDNqcW4Q5Pg,80071893236333,false
 64.176.226.248,Paripark,Seoul,KR,37.5822 126.8866,AS20473 The Constant Company  LLC,Asia/Seoul,6NmKxzGAdJ9ttewC8hwJEFaJdn4GScjpqimaL5BnbWgx,108620129718290,false
@@ -293,6 +298,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 216.158.77.42,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,6p5sKuoNsipkg4TZdtHefFYWBDiMLKeLfQQjp24ztu2d,670047117653,false
 45.152.160.108,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,6pEtDovpyd1zUMYPuNhMCPU37sUTEAtzzgoVVAh1G1JL,226833753274310,false
 192.155.103.210,St. Louis,Missouri,US,38.6273 -90.1979,AS30083 velia.net,America/Chicago,6ppK739xi1QmYhugesiMaNYLsuVPi1HzU6qwGeMnStkV,26522294688790,false
+88.216.198.136,Chicago,Illinois,US,41.8500 -87.6500,AS204770 UAB Cherry Servers,America/Chicago,6PvHaibtZhuba14dzbhGFJRASYX3Ka2oviRzSbXV2wYC,901170206740514,false
 154.30.4.104,Ashburn,Virginia,US,39.0437 -77.4875,AS397423 Tier.Net Technologies LLC,America/New_York,6pVZhUW9AZMMFuNVMUds8useZHB7VFT4vvxuA3B9JgW4,19008555211982,false
 80.77.175.75,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,6qcbqy2Twyks4NAjjmvQiSFdaYCdyb3qRWEtDcEjYSQ2,134799655947865,false
 79.137.101.206,Lille,Hauts-de-France,FR,50.6330 3.0586,AS16276 OVH SAS,Europe/Paris,6qfpcN1G71zJW4oC3d7qzSkHanqzJCZmdJHCGsXGEsof,18988133135703,false
@@ -300,13 +306,13 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 149.255.37.190,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,6Rk694kh1QTyQkirdb1uDZmS5xqG9bNaYtxx8d311Mr7,212740629662416,true
 80.77.175.76,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,6RZshDYBGToKCniDjckyF3cR4NpuEVqZWwTcPZ54gELr,21277536686584,false
 149.255.37.94,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,6TkKqq15wXjqEjNg9zqTKADwuVATR9dW3rkNnsYme1ea,2439492283293458,false
-37.61.212.219,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,6WgdYhhGE53WrZ7ywJA15hBVkw7CRbQ8yDBBTwmBtAHN,3175530972971773,true
 64.176.68.124,Warsaw,Mazovia,PL,52.2298 21.0118,AS20473 The Constant Company  LLC,Europe/Warsaw,6xct3c93fs7s8Dm5j3rVabTDZD7ahtwFDTzydpFTuiEn,118202079251580,false
 217.170.206.42,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,6xFDLX751L7H9d5fQT9sf2SM5RWWE9LDgqz25pPDbWoJ,25638789137420,false
 95.214.54.54,Warsaw,Mazovia,PL,52.2298 21.0118,AS201814 MEVSPACE sp. z o.o.,Europe/Warsaw,6XjxbDk9epumcbnsq35NVGytzb5b9aHPodWpNnfUKaC5,19074434118677,false
 94.46.194.194,Birmingham,England,GB,52.4814 -1.8998,AS42831 UK Dedicated Servers Limited,Europe/London,6xUK9Nbonr4eoJNtHGoUEMmYKoPz5mipKzyDBv6deX4d,227441439987398,false
 46.146.228.4,Perm,Perm Krai,RU,58.0105 56.2502,AS12768 JSC "ER-Telecom Holding",Asia/Yekaterinburg,6XUsoRDfb5YrGy5m6HsSiMjFnSvKKbn83qfadKLeswKe,27783833193072,false
 134.65.193.112,Frankfurt am Main,Hesse,DE,50.1268 8.7554,AS395201 Allnodes Inc,Europe/Berlin,6xWLi1TDSh65fWsSqE1zdvANTSuVDRMx4ghsGJwgunS8,37488094332845,false
+216.18.211.10,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,6xz2hw8jSQ87Db97U7Z9QQfWUBNgw5Hih2Zbn5TWCiGC,41177387491871,false
 5.199.172.178,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,6y7V8dL673XFzm9QyC5vvh3itWkp7wztahBd2yDqsyrK,2916667655378480,false
 31.204.159.139,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,6YDWxPaJWpZxJ6JLGaBeTJaGQn3gi3Pwtivii9cDyDHo,35173683186848,false
 108.171.216.114,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,6z4oJZhpJjcTTCX8QtiWCuWyEQo5n69J6KbbzvQJSNB1,19704186992289,true
@@ -322,7 +328,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 91.211.83.195,Moscow,Moscow,RU,55.7522 37.6156,AS35598 INETCOM CARRIER LLC,Europe/Moscow,77xRWv8Z3kaQpD9K3Den7YWJ7sxsf1KTnw5MdcM7Gtnw,19070684706840,false
 216.18.219.214,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,79MeHzaMahBpgCZXHSzu7ukAd7YD59ZLn6VJ3Mb7Vur,24697571394105,false
 185.26.10.215,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,7AGmaR23EUZFsxuyJ8VNUUPb7dzqY41uh9Tsjq7fQGVr,156408488258096,false
-80.77.161.213,Podolsk,Moscow Oblast,RU,55.4242 37.5547,AS51369 LLC "TRC FIORD",Europe/Moscow,7b7VuKUv1NCDhbdvufkTKCV5kpzyc5yH4A7YKMUjykX2,725389368894,false
+80.77.175.93,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,7b7VuKUv1NCDhbdvufkTKCV5kpzyc5yH4A7YKMUjykX2,725389368894,false
 185.209.178.41,New York City,New York,US,40.7143 -74.0060,AS396356 Latitude.sh,America/New_York,7bLCyBuFdPFYbBuztRvqrX9e13Dt6mfpoxdnMDhXvZaV,1999520981,false
 176.215.0.205,Yekaterinburg,Sverdlovsk Oblast,RU,56.8519 60.6122,AS51604 JSC "ER-Telecom Holding",Asia/Yekaterinburg,7BTbVD8t98eYH3XV17Azui4cUMLyfvheoJ6w6VtWivfW,29931566717781,false
 64.130.34.47,New York City,New York,US,40.7143 -74.0060,AS20326 TeraSwitch Networks Inc.,America/New_York,7cJB452VqXe5pM9f6YKcTziWmoHE9Tg4jNWTCpohFiAH,83392969426898,false
@@ -352,6 +358,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 205.209.119.110,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,7MuF8X6oRnNDw2q2D66MYDfJ4mEPk4ifiAv9s21duwax,18762185106235,false
 34.90.21.106,Groningen,Groningen,NL,53.2192 6.5667,AS396982 Google LLC,Europe/Amsterdam,7mYeuc2iBaWRpkxATYteXxe2pMjzQ7XhPgP1xG6vTjDh,552867023224087,false
 199.189.85.39,St. Louis,Missouri,US,38.6273 -90.1979,AS30083 velia.net,America/Chicago,7Nn8qBJey7vXtVFMNBbbuN8UkujU8Y6nWzbHVGuf49yV,97717122,false
+64.185.226.194,New York City,New York,US,40.7143 -74.0060,AS18450 WebNX  Inc.,America/New_York,7nngV9xuhwHEScyKpmzx5rvAqN7YMrqBfXTr1RDrXFDR,4938877426667,false
 80.77.175.70,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,7NU7hg2LyMeu7yE1zWGoCf5EU2LzFeeVaGKG4QnQko4U,19123087579003,false
 185.26.10.191,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,7Nu9ckgtjobZ3MkbadGFKEvRymYuah9HmcxiUJKMM9NB,185556229901990,false
 173.231.62.162,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,7P5GvWEpPWjJaVbogDkpR4KhTLAoX7WB8vcSdFSPZnHT,19018901074061,false
@@ -398,7 +405,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 80.77.175.82,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,8bDP7mZsx6Z1pZbRoMtzj5AXaqoyBLqEfgAi157AnKJX,58094900337577,false
 204.13.239.42,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,8buJst58M53hS9Zq5Gdrx83WV6FxP9SYC6q7twwGRTuu,18809374110132,true
 185.189.44.218,Stockholm,Stockholm,SE,59.3294 18.0687,AS214159 UAB Cherry Servers,Europe/Stockholm,8bYQFFFRK8utNNSwZJwo291WwhNfev33yirj6qwZjF3t,92271564216280,false
-62.197.45.58,Amsterdam,North Holland,NL,52.3740 4.8897,AS58061 Scalaxy B.V.,Europe/Amsterdam,8c9dYBdnCy5446dbf23ZyenuJRSDqATCXN6DXgKGErLw,212096523013738,false
+103.167.235.186,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS48014 Albanian Hosting SH.P.K.,Europe/Berlin,8c9dYBdnCy5446dbf23ZyenuJRSDqATCXN6DXgKGErLw,212096523013738,false
 216.238.85.198,El Colorado,Querétaro,MX,20.5618 -100.2452,AS20473 The Constant Company  LLC,America/Mexico_City,8cnksBVjDPspn3AvmxJd8JKUdh4uWDDXzDemPmDctaHi,19016018292272,false
 91.189.181.98,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,8ebFZA8NPLBZD91CwsG1HWQsa2B5Ludgdyf5Hi3sYhhs,133074035157067,false
 103.50.32.71,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,8Ey5FDayWYgJdVoquScT2hJDKWk7nQQfqzfGBt1emJpx,19131278455749,false
@@ -410,9 +417,10 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 72.46.84.5,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,8hTi1gRAogrsk5uZustzkFb1SKgpzxLhfYWTJ5xBV4Ww,17249149749543,false
 216.158.233.134,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,8iiLHGgCq66zEgcLJqQypJSKRMbXGYsNF7pwH3UdNskU,19074840954029,false
 154.30.2.50,Ashburn,Virginia,US,39.0437 -77.4875,AS174 Cogent Communications,America/New_York,8j5kjKAufwdJH7GitGY18Qp12EhEQkVMc4PWZzGeH8Gw,19023723104604,false
+173.231.63.34,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,8jAft2jnKtjx9MQNtiR9cE3RxrsaL8sjJJgCbHAd1XeS,26166689986770,false
 134.119.190.207,Strasbourg,Grand Est,FR,48.5839 7.7455,AS29066 velia.net Internetdienste GmbH,Europe/Paris,8JpfpVyew5Y9cLQCHkt5gqT4vDZLL46ZknMbSThVjzrg,305880145435905,false
 46.166.164.252,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,8kKWqYja9tNyFRW3PvkMj2A9ERvmBwvWvf8fJqgTD4YE,20211216229028,false
-45.77.114.140,Miami,Florida,US,25.8130 -80.2320,AS20473 The Constant Company  LLC,America/New_York,8KtF9eXQ9f7Qa4zyKq3w2pYxGZmXfMYyLpJgRx1Pqvt7,20258149563553,false
+185.84.247.206,Moscow,Moscow,RU,55.7522 37.6156,AS196695 NetOne Rus JSC,Europe/Moscow,8KtF9eXQ9f7Qa4zyKq3w2pYxGZmXfMYyLpJgRx1Pqvt7,20258149563553,false
 172.93.104.40,Piscataway,New Jersey,US,40.4993 -74.3990,AS23470 ReliableSite.Net LLC,America/New_York,8M2DJQmd7Gka44WQC5Y59qjvfJxzRaekpuy5zXfekG1G,18977950928493,false
 199.247.18.165,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS20473 The Constant Company  LLC,Europe/Berlin,8mhdbYU3PxALpTfDrdTYvk5obaGxL8ATQMvCLXW9SV2L,230511733843115,false
 70.34.244.25,Warsaw,Mazovia,PL,52.2298 21.0118,AS20473 The Constant Company  LLC,Europe/Warsaw,8MZFWowte8pHb6zJXxUdogUfdWRbqu7fGvaWRXtkDP7X,25503098373719,false
@@ -459,10 +467,12 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 217.182.213.212,Calais,Hauts-de-France,FR,50.9519 1.8563,AS16276 OVH SAS,Europe/Paris,9bxGPEvFjGHqpAHMkm97R5d8euFnpJ3ws83tMkTbcBUJ,44939478964265,false
 83.143.86.82,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,9cDdzkrimGrsNVKKRtN2Q1ydBwDxjDtPGyyLRgnUYyAQ,83038445063160,false
 154.30.2.47,Ashburn,Virginia,US,39.0437 -77.4875,AS174 Cogent Communications,America/New_York,9CJKNW77HfjZf2jrUpdecDub6a5cb1MtVFv7hrXAeVwb,18983168772641,false
+173.231.41.50,New York City,New York,US,40.7143 -74.0060,AS18450 WebNX  Inc.,America/New_York,9Cjoq1m66wqDFhnbyhB5LhKQWhcCynU8USV9qQn42eZu,16191502343030,false
 91.237.141.129,Birmingham,England,GB,52.4814 -1.8998,AS3170 VeloxServ Communications Ltd,Europe/London,9CqDvvGvSNVZDo5RskCAv4fTubpFCs9RLTrjUxEYrvNA,19038519693672,false
 147.75.90.211,San Jose,California,US,37.3394 -121.8950,AS54825 Packet Host  Inc.,America/Los_Angeles,9cS2cDhLmRoUCqkhMjXZs4HC1YYbP5QYweCP3vVqodcb,21436894235460,false
 50.115.47.106,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,9D3o3EYeknhTrRvXS1PnD2euGXnMFa3HwpYBq5gPZJDA,36650936224270,true
 95.110.132.169,Arezzo,Tuscany,IT,43.4628 11.8807,AS31034 Aruba S.p.A.,Europe/Rome,9dH6wfdJVgnDcbCUjT8rkmejAzTnGQaFarmLfvBYXANK,655565326292,false
+95.179.229.253,London,England,GB,51.5085 -0.1257,AS20473 The Constant Company  LLC,Europe/London,9fa5wcqnAQqHyn58U1vHHLuZW5GXLcoho7hKT17jGJfZ,9619944210027,false
 185.32.162.87,Prague,Prague,CZ,50.0880 14.4208,AS201265 ANAFRA s.r.o.,Europe/Prague,9FXD1NXrK6xFU8i4gLAgjj2iMEWTqJhSuQN8tQuDfm2e,212791105173864,false
 70.34.252.244,Warsaw,Mazovia,PL,52.2298 21.0118,AS20473 The Constant Company  LLC,Europe/Warsaw,9gFxqsXbFyrKXUkqpAatonn47uYZ7sEZSnMxhzQoXrUJ,240330871895161,false
 64.130.52.112,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,9HiuHYVDnoQz7xdL2NFmZdv6S2jYNUQxGg7taDwrZ3gy,77715222471142,false
@@ -479,7 +489,6 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 37.61.223.177,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,9JdZLEKhA7k6SxRQ4cJT2Zh5JhRUBJGXcjTNwMtTwSiz,19242828117106,false
 64.130.57.94,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,9jnYKtJoHKsR5XudQnvR9cXTxeorQf8C1wqZvU79govG,84035276482529,false
 64.130.55.36,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,9jxgosAfHgHzwnxsHw4RAZYaLVokMbnYtmiZBreynGFP,4349998478039680,false
-176.99.142.182,Moscow,Moscow,RU,55.7522 37.6156,AS35598 INETCOM CARRIER LLC,Europe/Moscow,9kTTMvxVjE5Doyr9QeFzrx7ccK3B6nmFQZtn61JFe4uD,19099683925481,true
 64.176.181.196,Swinton,England,GB,53.5000 -2.3500,AS20473 The Constant Company  LLC,Europe/London,9maF99FLLAMh5v5JKG1ZyRZVBVsT5VkZnAJzDvduCpJa,304384051588286,false
 57.129.76.102,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS16276 OVH SAS,Europe/Berlin,9Mo3ap3jpuqQpLi75EsiXLWfTr1cbBhrJNumoq1wnVp6,33454360754344,false
 186.233.186.153,Chicago,Illinois,US,41.8500 -87.6500,AS262287 Latitude.sh LTDA,America/Chicago,9MYPYNS8MmwcrZLGndHFvw4eR9BYhdfJj6jBk2iHiE88,378812639257800,false
@@ -496,7 +505,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 136.244.110.211,Haarlem,North Holland,NL,52.3904 4.6573,AS20473 The Constant Company  LLC,Europe/Amsterdam,9r2CsyjRTmTRtu8GFk5oJRSQr5YfSENxDkf3eox8iPLa,210632094272004,false
 3.79.229.25,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS16509 Amazon.com  Inc.,Europe/Berlin,9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ,4456074260452141,true
 103.167.235.181,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS48014 Albanian Hosting SH.P.K.,Europe/Berlin,9SjGU3tzdEXfLaVsLpnTwP3inBNhAPMq4XKupUf9Ms5E,8889506366830,false
-85.195.116.131,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,9T6SNsBimjCRJpkEjiVsc8AcxTBa1XVA7RjnBGGfWP23,50776783880051,false
+145.40.114.109,London,England,GB,51.5085 -0.1257,AS54825 Packet Host  Inc.,Europe/London,9T6SNsBimjCRJpkEjiVsc8AcxTBa1XVA7RjnBGGfWP23,50776783880051,false
 46.21.152.138,Los Angeles,California,US,34.0559 -118.2666,AS29802 HIVELOCITY  Inc.,America/Los_Angeles,9U4WqNGVywKt3gG9HSt9tGVXBDXJvgid6BVweRysaJmg,60163328743591,false
 185.26.10.185,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,9UM8wQ8F5oMiRcP5YdqD6Lr4krpBWCD8LtgQYoisJd9i,1119995100126954,true
 216.18.211.170,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,9vE5CDEtr7GHQfZ7aRBJmMbTJZqCFGjkdZarYL1AYeGu,18931936776173,false
@@ -519,7 +528,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 145.40.114.125,London,England,GB,51.5085 -0.1257,AS54825 Packet Host  Inc.,Europe/London,A5nvA7aUhcQWBeKFaf8WC7e5Ryzp4piuWc3hkvpLfgSs,6839850867154,false
 31.128.59.207,Moscow,Moscow,RU,55.7522 37.6156,AS215457 DCS LLC,Europe/Moscow,A6ZmvWcKGVUnwpum4GhVn7CftUJgVFNSg6biedaNKHBC,19031248675119,false
 185.26.8.37,Dallas,Texas,US,32.7831 -96.8067,AS396356 Latitude.sh,America/Chicago,A79u1awz7CqnxmNYEVtzWwSzup3eKPNW6w2Jrd56oZ3y,86745773084421,false
-45.152.160.153,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,A8vNkfP4Rv6msJyuXgwvUSUUu5vPfLxMJB5ddNkHaCGJ,83013882962611,false
+149.255.37.90,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,A8vNkfP4Rv6msJyuXgwvUSUUu5vPfLxMJB5ddNkHaCGJ,83013882962611,false
 185.26.11.149,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,A963nwma1r6tr6VgASiHgj9VKmvXvbFeZHoMW6XT1aiQ,36485414142609,false
 160.202.131.177,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,A9mvukTd77EbRoBX4ydSCFQHdu5bsRFkNXTTRstA8FAC,1231824025569571,false
 74.118.139.84,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,AaapDdocMdZQaMAF1gXqKX2ixd7YYSxTpKHMcsbcF318,550570646025968,false
@@ -535,6 +544,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 103.14.27.9,São Paulo,São Paulo,BR,-23.5475 -46.6361,AS396356 Latitude.sh,America/Sao_Paulo,adramSYKBv1yHoZTub4kepcmF5LybPxwyJcsz4fpfi7,113095964343604,false
 64.176.168.67,Rosh Ha‘Ayin,Central District,IL,32.0956 34.9566,AS20473 The Constant Company  LLC,Asia/Jerusalem,AdSHK6vpQnwHRSw7jXUwjMEytmhFwnynZSENhvpAxL1y,38043819318805,false
 185.221.164.103,Moscow,Moscow,RU,55.7522 37.6156,AS199546 Moscomnet LLC,Europe/Moscow,ADtaKHTsYSmsty3MgLVfTQoMpM7hvFNTd2AxwN3hWRtt,15758848492594,false
+103.106.59.211,McLean,Virginia,US,38.9343 -77.1775,AS396356 Latitude.sh,America/New_York,AEAJtnjjB19XFreJH21UP8rfd12f9kxMmngwZG3tGXbP,217338801686370,false
 84.32.186.105,Amsterdam,North Holland,NL,52.3740 4.8897,AS59642 UAB Cherry Servers,Europe/Amsterdam,AEHqTB2RtJjegsR2ePjvoJSm6AA5pnYKWVbcsn6kqTBD,2083334280438320,false
 5.39.218.88,Amsterdam,North Holland,NL,52.3740 4.8897,AS57043 HOSTKEY B.V.,Europe/Amsterdam,AFZpadQLDCdMSCUf5fHAZbGB2G29jdfoef4kmytXVYzG,19045805590730,false
 104.238.189.205,Aubervilliers,Île-de-France,FR,48.9167 2.3833,AS20473 The Constant Company  LLC,Europe/Paris,AfZTWYoFQbzqCMmUBTD7XwxFvjob1FVyCvkaXRryxtKc,100884562842723,true
@@ -565,6 +575,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 85.195.93.17,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,ANTmwMfoBzEk31Rw8e11nLRvDgzWEVEMGUUy1v9fdRxV,83180984435332,false
 185.189.44.169,Stockholm,Stockholm,SE,59.3294 18.0687,AS214159 UAB Cherry Servers,Europe/Stockholm,AopYZ35QJ3V2dxie66TB8SGcaKNoCyRnn5Jf37WS6KiS,20831141208548,false
 148.113.199.188,Montréal,Quebec,CA,45.5088 -73.5878,AS16276 OVH SAS,America/Toronto,AoUwfPuiEek2thVRDhMP7HbQb9rguyab4rDiz2NAfwwA,468889614754265,false
+64.130.52.196,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,Ap6kBVijRQTXru64yEy1ax4RMzsoJHxrJtXQXi76kd6L,16833733489951,false
 217.170.206.34,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,AptafqHRpGk3KCQrGtuPGuPvWMuPc4N15X7NN7VUsfbd,203843677746253,false
 45.250.255.46,Tokyo,Tokyo,JP,35.6895 139.6917,AS396356 Latitude.sh,Asia/Tokyo,apySoL1xCcCH6owdwZv8r8PWVyCHkGTGTHm5PCxsR3E,200492691148041,false
 192.155.103.247,St. Louis,Missouri,US,38.6273 -90.1979,AS30083 velia.net,America/Chicago,ARF8ETYuMQ5wvUqgbWBLSKe2Uz2ytHuvWEVoybwcqk8c,107493530354843,false
@@ -580,7 +591,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 178.237.58.187,Amsterdam,North Holland,NL,52.3710 4.9042,AS56504 HostCircle B.V.,Europe/Amsterdam,Atom7LRkdXj6MBoWJPgjaetrCMrgB9nnkQBYXTWE8Z3S,117274156877945,false
 103.219.168.233,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,AttracNGe9bZnr3YhWZAa2jqbUZB29zWc4RgQLLYz2gJ,18685801038453,false
 208.91.107.249,Togoshi,Tokyo,JP,35.6170 139.7486,AS20326 TeraSwitch Networks Inc.,Asia/Tokyo,AUa3iN7h4c3oSrtP5pmbRcXJv8QSo4HGHPqXT4WnHDnp,18968972150727,false
-46.166.162.215,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,Av8EnYrPBnSJHK5e2wmTdnCpSy7nzmBgyFaUKSyLnBfe,175771193682375,false
+46.166.162.210,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,Av8EnYrPBnSJHK5e2wmTdnCpSy7nzmBgyFaUKSyLnBfe,175771193682375,false
 46.188.82.48,Moscow,Moscow,RU,55.7522 37.6156,AS8334 LLC SETEL,Europe/Moscow,AVZ4FNgAd17BXjRBRLLwAsMgnoL42bPFnLzPHvZe2vb9,28734425109404,false
 67.209.52.92,London,England,GB,51.5085 -0.1257,AS20326 TeraSwitch Networks Inc.,Europe/London,Aw5wEMXhbygFLR7jHtHpih8QvxVBGAMTqsQ2SjWPk1ex,2499999939665440,false
 189.1.171.13,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS262287 Latitude.sh LTDA,Europe/Berlin,AwcMVMvmT1aCETVYV42WE1cSMCyNp4vZqVjLsvs6dM4o,178072964165537,false
@@ -588,6 +599,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 62.113.194.253,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,AWqkGtq9rgpMDc7pTKe62aJuaX8ZvrnZxCpr8nfpDSCK,18853208022579,false
 37.72.171.102,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,AWZhUiQjrjtxL8MEMWsCFbMausFQKkdTnDsFW2i411hN,71092397056336,false
 69.10.35.158,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,AXhtto26sYhU2aEvN4mHCZexGXTjK64Yd51f3bEpWtfx,18960008012553,false
+89.222.171.195,Moscow,Moscow,RU,55.7522 37.6156,AS34123 Netorn LLC,Europe/Moscow,AXX64w9VS82qbM6WP5FHSPK7qbnRtzxyAvjARsencqrZ,178342509141558,false
 103.14.27.33,São Paulo,São Paulo,BR,-23.5475 -46.6361,AS396356 Latitude.sh,America/Sao_Paulo,axy3tCRL3wmFMVG4c69rYurcf4fXhBo2RcuBj9ADnJ4,62285534524854,false
 91.189.181.90,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,Ayk5TSNbnjQn95BGnz4ugkcm1kAtEwGcK1jRYmqrYvKN,185704018548740,false
 66.42.112.154,Elk Grove Village,Illinois,US,42.0076 -87.9931,AS20473 The Constant Company  LLC,America/Chicago,AYNvSS5XV23ezdUBUzMjrZoGpmDibADE7P3edS4wNKAv,54578141450337,false
@@ -767,6 +779,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 183.81.169.228,Lelystad,Flevoland,NL,52.5083 5.4750,AS206264 Amarutu Technology Ltd,Europe/Amsterdam,CZ2xJQHwiojrAgrR2BUNheuWxXGjSVSZrkcxFcAGoSUH,22208113450735,false
 80.77.175.83,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,CZLU7uNs1SNvmV1vodR29hwJFjQ2eVUXsQJwGt2SKVKk,64122443672824,false
 109.94.96.173,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,CZqQqmFZYoyWX1NiDNpbLFQUUiH2gmUweFtRV1vVifc8,19061302529201,true
+91.134.54.64,Lille,Hauts-de-France,FR,50.6330 3.0586,AS16276 OVH SAS,Europe/Paris,D1A4F2yh38JLQExKjDiCi4G2tCMwj93c3sikseSSePKe,10286627495916,false
 45.152.160.70,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,D1zqVW87NyyQAuGGNJVLa626QjQsEmkEmx8XynVMN98s,19581405776707,false
 172.93.102.30,Piscataway,New Jersey,US,40.4993 -74.3990,AS23470 ReliableSite.Net LLC,America/New_York,D2RV1q6FgePVVjrMa7AMzVbvvAeg5oS7TAV7qdNKSDsX,29318232877661,false
 149.50.110.236,Warsaw,Mazovia,PL,52.2298 21.0118,AS201814 MEVSPACE sp. z o.o.,Europe/Warsaw,D35AyoGVA3GsQLgFs3opXBEuvW6EdNuYGSfEDxpsDojU,19071229201193,false
@@ -850,6 +863,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 57.128.210.105,Warsaw,Mazovia,PL,52.2284 21.0522,AS16276 OVH SAS,Europe/Warsaw,EBoKqyT2kCabcHXgpF7ScwrHgGUsR821xkTJsHtP2JJi,19036554387435,false
 194.45.36.236,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS48314 Michael Sebastian Schinzel trading as IP-Projects GmbH & Co. KG,Europe/Berlin,EBoyo2DA2wQtnfGgVcGUCi48MguJFBNEdMt6V9dSns9r,22100889323102,false
 185.32.162.89,Prague,Prague,CZ,50.0880 14.4208,AS201265 ANAFRA s.r.o.,Europe/Prague,EC6axG4VsaAifzQ7JDDqEBrC99gZaszmkFcDvQiNM4Dj,108693974951525,false
+64.130.51.51,Newark,New Jersey,US,40.7357 -74.1724,AS20326 TeraSwitch Networks Inc.,America/New_York,ECeaWy82CxpeJQr3EG3XNmYXc9NrVeWDH5ag9Lt6TPVR,35261650958663,false
 95.67.10.106,Kyiv,Kyiv City,UA,50.4547 30.5238,AS34867 Cosmonova LLC,Europe/Kyiv,ECNnK4VjcKTsABiw8FAp3JCE6tCmYyrEJthYVyMazmxi,161283391198412,false
 103.14.27.45,São Paulo,São Paulo,BR,-23.5475 -46.6361,AS396356 Latitude.sh,America/Sao_Paulo,Ed5b3gHwAF6FEicCFjyQTwqV1LHHgePa1qMWiBjo8D23,70624736162871,false
 37.61.218.226,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,Ed9WjPnZfAXsPttcqxMwj94qsuXVRyBsyXnDkxFva2Zv,93601311019862,false
@@ -909,7 +923,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 57.128.229.131,Warsaw,Mazovia,PL,52.2284 21.0522,AS16276 OVH SAS,Europe/Warsaw,Fa17nmHFt62kmerRQNGtgVWDxnuf7UD3PY2eeFfhpz2t,19063966434146,false
 213.163.64.140,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,FACb6bbTDRBHCK999V8ox8jga5JBnt1r3vvzmAYAMv2o,136031891733947,false
 103.167.235.112,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS48014 Albanian Hosting SH.P.K.,Europe/Berlin,FaHhtym1F1ZersAivvZZTEJrmzrdTwTe3pzHX2LmUUFd,25878125163012,false
-191.96.101.130,Charlotte,North Carolina,US,35.2358 -80.8964,AS397423 Tier.Net Technologies LLC,America/New_York,farbZXR7aBQSMCYiUXzoS4pRUsvuCZ38f6AXMXiKACf,7734255642779,false
+213.163.64.135,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,farbZXR7aBQSMCYiUXzoS4pRUsvuCZ38f6AXMXiKACf,7734255642779,false
 5.199.172.70,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,FB2Wa9wJgT8WnZqbUAdPVvoqSwzofboZepRWWoH4UAgv,19013146737413,false
 35.214.207.138,Groningen,Groningen,NL,53.2192 6.5667,AS19527 Google LLC,Europe/Amsterdam,FBbqKvwLfKGZrKrfSbPJz4ymQ7zMarhRyZtu1RBkSe89,512527570664690,false
 185.26.11.107,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi,5291177866245421,true
@@ -929,6 +943,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 45.250.253.96,New York City,New York,US,40.7143 -74.0060,AS396356 Latitude.sh,America/New_York,FGiEdzde7Fco2WLpNQMat299hUVoykJdaA5hxdmCzHiS,124912391569269,false
 154.51.14.145,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS56504 HostCircle B.V.,Europe/Berlin,Fire6ZGPLaqBBGWXC8PgweVjREVXRhwzgRNkdGs1wfQM,348945067919598,true
 186.233.187.31,Chicago,Illinois,US,41.8500 -87.6500,AS262287 Latitude.sh LTDA,America/Chicago,fishfishrD9BwrQQiAcG6YeYZVUYVJf3tb9QGQPMJqF,499667132247155,false
+173.231.40.50,New York City,New York,US,40.7143 -74.0060,AS18450 WebNX  Inc.,America/New_York,Fj8QKDuNcptyXT6Cub2TnjWs6zZ3qya49dw8q4DE4f8V,14721849282942,false
 91.189.182.178,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,FJDmjm2bkR49AxtBvABQphrYwjdjB54BP4XCW7ht4E4M,18845994087913,false
 62.113.194.95,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,FJN8ryNvkm3QAQufsjJmJ9eGPpK1D8hG4MawATqZfFhx,7866799694704,false
 213.163.64.147,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,FjYEr2UCeFzNfAKiFrbhG34Zv8LxbmfHYAFhAfc7SLQL,261484139762179,false
@@ -972,6 +987,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 194.187.206.52,Khimki,Moscow Oblast,RU,55.9001 37.4285,AS35598 INETCOM CARRIER LLC,Europe/Moscow,FxE69xVkPAUYh3Y2QCHJVWwVB8x1F3wbHnfKGoUvXn81,10926215916957,false
 57.129.36.231,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS16276 OVH SAS,Europe/Berlin,FXfNZwnDQxNR3NVHzA3Xpctzey7AUmgz5YvWTHiUActw,16633558430534,false
 84.32.186.49,Amsterdam,North Holland,NL,52.3740 4.8897,AS59642 UAB Cherry Servers,Europe/Amsterdam,FYjejVMGsaN3v8fo33xfDxQxiDEdxw73KqgPymcLorY7,83039189357926,false
+64.130.52.113,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,FyLVPAKkgdAy8Gn9jnFYN5yjC1ubQWRkw2EHt2UnC8uA,35377672934257,false
 149.255.37.218,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,FyrwfMaomErzqrFUXMjCJ7mA4u81DsiDdrzC3MJD6d4j,273988445152524,true
 80.77.175.85,Moscow,Moscow,RU,55.7522 37.6156,AS28917 Fiord Networks  UAB,Europe/Moscow,FYWeJ3uyJRHPUYj84ebhPAa7ZTeq9WU8LHQaKAgDcF74,18950603975845,false
 64.130.52.39,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,FZ4MT1HYJHd9GK8D5mJ9f3r7irLaDL5NxBNLjGqrLqs9,1451981262236802,false
@@ -1015,7 +1031,6 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 91.189.180.246,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,GnZB2GTH8KJKqU3L4tR42a7BnKXxvgS9rerGMAszNCp,18890482366534,false
 64.130.50.155,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,GoeW4aFK4dGoekJySgUynWDxBZiQJqm8GDAF4H53tDK9,3281148577361225,false
 45.135.201.209,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,gojir4WnhS7VS1JdbnanJMzaMfr4UD7KeX1ixWAHEmw,221467765047463,false
-64.130.32.204,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,GoLd56YQz8nJQnCsPFw8g5hcxrNaQBvCfAgbtwYFLbd,0,false
 146.0.228.93,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,Goo7uPA1ASVX2Ws4JW1eAjQxBcTtjMdpAHBtPBzi8yN6,161255943857298,false
 91.134.58.54,Calais,Hauts-de-France,FR,50.9519 1.8563,AS16276 OVH SAS,Europe/Paris,GpSBerAanZz9TrWitn85QoMcDSLeY2GTG7owk3iXRfGy,18972979946656,false
 84.32.186.203,Amsterdam,North Holland,NL,52.3740 4.8897,AS59642 UAB Cherry Servers,Europe/Amsterdam,GqDCbnafLmKkdqiqf278jDLXqjjZMB2sViZQtR82jPUf,24418675695650,false
@@ -1046,6 +1061,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 103.167.235.92,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS48014 Albanian Hosting SH.P.K.,Europe/Berlin,H3n2gVjzxhMWTXgqnrTfi8WdqAcQFuoHy5SqvAdqkMF4,244203037952697,false
 88.216.198.210,Chicago,Illinois,US,41.8500 -87.6500,AS204770 UAB Cherry Servers,America/Chicago,h3ZXAE168mNxsszYYrUfkMVSCWx6DU2Uvrx97Kb1Nch,172037671674548,true
 173.231.22.126,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,H5EhFXGKY29BNcDbz2k2pcBeRiFXXGLQ9exHmirfRuFn,22723266004668,false
+173.231.45.98,New York City,New York,US,40.7143 -74.0060,AS18450 WebNX  Inc.,America/New_York,H5H4DBKH28Px92x4N1J5A9bxmy2pYk4v6cbS79nwNZSR,21497047284670,false
 103.167.235.121,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS48014 Albanian Hosting SH.P.K.,Europe/Berlin,H68e2XUdXK3j8ibFv61VymvHn6AEhHPHLZSmbbQnZp1M,110877416456900,true
 96.30.192.67,Atlanta,Georgia,US,33.7865 -84.4454,AS20473 The Constant Company  LLC,America/New_York,H8FFpNiVPeBR3ZHG5YoULzY3fPj1eRXtXLBuXt5jEJit,19039250377157,false
 64.130.32.8,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,H9ENbtmy2tWFtAJNmpC8xQtbcr1NTp4FXLdphRaG8L2T,37599595608195,false
@@ -1074,7 +1090,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 185.86.135.78,Bronnitsy,Moscow Oblast,RU,55.4211 38.2619,AS198297 JSC "Ul-com Media",Europe/Moscow,HKjEo1L2wwiJg5bE7mQQq14t98mRSfbQfrCWTYceScP8,19015364780096,true
 91.242.214.53,Chicago,Illinois,US,41.8500 -87.6500,AS262287 Latitude.sh LTDA,America/Chicago,HLnodbYkL5PFA8hjAZDkm5pGzV7eLTvcs671AW2L6St9,1209205324345830,false
 207.148.9.240,Elk Grove Village,Illinois,US,42.0076 -87.9931,AS20473 The Constant Company  LLC,America/Chicago,HLv4d6uhQ7ViicNQ1ff6RHNNntNzmq1bATLne2kCW5VV,28214227269412,false
-64.130.34.50,New York City,New York,US,40.7143 -74.0060,AS20326 TeraSwitch Networks Inc.,America/New_York,HM1KjNaXa4w8K4gCXbieoMh5gUTNeUhg9fvdXMKeBW3L,246410268597051,false
+148.113.199.189,Montréal,Quebec,CA,45.5088 -73.5878,AS16276 OVH SAS,America/Toronto,HM1KjNaXa4w8K4gCXbieoMh5gUTNeUhg9fvdXMKeBW3L,246410268597051,false
 95.165.26.94,Moscow,Moscow,RU,55.7522 37.6156,AS25513 PJSC Moscow city telephone network,Europe/Moscow,HMWXfjaeSHhww1wvdBhqhHVP9v96mFB4LJ9xP2MXbDGH,27499277606064,false
 108.61.202.207,Elk Grove Village,Illinois,US,42.0076 -87.9931,AS20473 The Constant Company  LLC,America/Chicago,hN6om5PAp87yuy5UcVbwn5fXhWF3pEJcarFGXe4c6XQ,41919418447336,false
 15.235.84.4,Montréal,Quebec,CA,45.5088 -73.5878,AS16276 OVH SAS,America/Toronto,HNcSu8SVg4fuRyM3XV255totbTe6NPGhPSApzxn4V5Jx,18960828263154,false
@@ -1107,15 +1123,17 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 72.46.84.219,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,hxMhrsuGPDmkLJ4mTxEjyeMST3VGhTiwJvS9XgHwePj,54543338388798,false
 91.189.178.98,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,HYLo1uWMLxR51jJuP2YxBT2DwAxA43pt2PdRJWryZQFe,18934329044514,false
 45.32.194.37,Dallas,Texas,US,32.7831 -96.8067,AS20473 The Constant Company  LLC,America/Chicago,HYLS8q5k3S5qPoUfwTvcUzyLJ6wUsFoi8DtJVryH73KV,19072505941409,false
+72.46.84.195,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,hyp3Eo67t6FgeuWg5Qxbeme8NPXJPXXdKT4iJ4DsLf2,124183657316542,true
 216.238.66.234,El Colorado,Querétaro,MX,20.5618 -100.2452,AS20473 The Constant Company  LLC,America/Mexico_City,HyperSPG8w4jgdHgmA8ExrhRL1L1BriRTHD9UFdXJUud,261407265166716,false
 45.250.253.89,New York City,New York,US,40.7143 -74.0060,AS396356 Latitude.sh,America/New_York,Hz5aLvpKScNWoe9YZWxBLrQA3qzHJivBGtfciMekk8m5,4961841065023046,true
 37.72.171.110,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,HzrEstnLfzsijhaD6z5frkSE2vWZEH5EUfn3bU9swo1f,1418560677982551,false
 65.20.104.37,Alcobendas,Madrid,ES,40.5316 -3.6475,AS20473 The Constant Company  LLC,Europe/Madrid,icex1C6pnZxznQWiHZZANjGU8nZ8kNquFnjyY7XXrXE,96111028925820,false
 83.143.86.86,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,idLi1KLjkzEmLvzdB756HweHRmpuC3AGkGnK2zhWJ45,77878198785314,false
 185.84.247.214,Moscow,Moscow,RU,55.7522 37.6156,AS196695 NetOne Rus JSC,Europe/Moscow,if4NttF3dYuRApxa25zmGmRobehEo3kU9jyeuZRHsxL,47342478221629,false
+64.130.50.15,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,iggyroq4YSBgSfmruSxuz3uj7dZvnsFXyZFXYcYy3FR,92038292176689,false
 185.86.135.77,Bronnitsy,Moscow Oblast,RU,55.4211 38.2619,AS198297 JSC "Ul-com Media",Europe/Moscow,indMGAW9rPd6d4Pe8YoN2gYRhUpLmEDdSGeQVo6kJ46,18737882739523,false
 91.189.180.210,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,J1xEijrZvidXX8eF9gnHprucjeMAASZ2tYkY1GXF91Tq,22323305186199,false
-185.189.45.80,Stockholm,Stockholm,SE,59.3294 18.0687,AS214159 UAB Cherry Servers,Europe/Stockholm,J2895yqMc1JqrWPQ2ryDPn7EbozZpAoCCPTy3BDUME9m,139547143952938,false
+212.83.42.94,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,J2895yqMc1JqrWPQ2ryDPn7EbozZpAoCCPTy3BDUME9m,139547143952938,false
 154.30.4.101,Ashburn,Virginia,US,39.0437 -77.4875,AS397423 Tier.Net Technologies LLC,America/New_York,J2obR2DK7gnd6H88HjKzEYuMyboDWRNpbzwmGSh31nnu,18807905352943,false
 104.238.205.151,Miami,Florida,US,25.8130 -80.2320,AS23470 ReliableSite.Net LLC,America/New_York,J2ofWwssE7YEMrpN5waPQgboWgLdwprsfXUu7vXaBona,29455657899076,false
 31.128.59.210,Moscow,Moscow,RU,55.7522 37.6156,AS215457 DCS LLC,Europe/Moscow,J3jZnDWMNHiQVuVDRM1PhYfFRMWwMEAMark2oiwQMzcu,214391963863262,false
@@ -1135,10 +1153,12 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 213.163.64.150,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,jqHuv48qXtPtDi7sL7erTLiTeVGC9UFRpKCLSsi6HKn,1672547335148,false
 69.2.42.124,Baton Rouge,Louisiana,US,30.4433 -91.1875,AS20355 REV,America/Chicago,juigBT2qetpYpf1iwgjaiWTjryKkY3uUTVAnRFKkqY6,750564793911064,false
 37.72.171.90,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,JupRhwjrF5fAcs6dFhLH59r3TJFvbcyLP2NRM8UGH9H,4265329565114814,false
+64.130.52.50,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,KBoNKoxPjdEmR4TrV9wH9wi96x9vSAs9NET94h91SGJ,97589961285148,false
 162.19.77.252,Strasbourg,Grand Est,FR,48.5839 7.7455,AS16276 OVH SAS,Europe/Paris,keSVSWNZfPBeQPcwvvkkerr2Xd6XoFUyPeWwzHSUdNN,34431978232672,false
 193.118.169.103,City of London,England,GB,51.5128 -0.0918,AS1072 Payward  Inc.,Europe/London,krakeNd6ednDPEXxHAmoBs1qKVM8kLg79PvWF2mhXV1,4770230714976469,false
 185.191.116.241,Frankfurt am Main,Hesse,DE,50.1390 8.6725,AS213896 UAB Cherry Servers,Europe/Berlin,KTMkUG8WCw9FdH44jLMBpc1teGafnYL6SgP4fHHbsNM,53995264856346,true
 202.8.8.186,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,LA1NEzryoih6CQW3gwQqJQffK2mKgnXcjSQZSRpM3wc,1504936005211952,false
+185.8.106.238,Chicago,Illinois,US,41.8500 -87.6500,AS204770 UAB Cherry Servers,America/Chicago,Lake8NXDThihebhxS3Js7mFnj9fthmus93zEdsFNrsL,275494737720073,false
 79.127.204.84,Prague,Prague,CZ,50.0880 14.4208,AS60068 Datacamp Limited,Europe/Prague,LeDbQ99QT342j9S5YdyXLrsq2Gu3T3dMGajExdAuE3V,71763725695345,false
 192.158.239.143,Charlotte,North Carolina,US,35.2358 -80.8964,AS397423 Tier.Net Technologies LLC,America/New_York,LFGGGJtnBLvq78DyMz1gTeedM6f8owck76qHThDABBC,41310390419390,true
 31.204.159.147,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,LitxAVo3RnYXD2sX1TyRJxfnKy48amXgyGiysPZjZwE,19765212705173,false
@@ -1189,9 +1209,9 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 67.209.52.254,London,England,GB,51.5085 -0.1257,AS20326 TeraSwitch Networks Inc.,Europe/London,oPaLtitM6cwpFVzP2rDhLsJLdY2vcbuZiJJyD1TFUKs,519515022976854,false
 212.83.42.3,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,orbit1bWKxnECKLqjhm5rybTiEC2GEYbecyebgEfM5q,21632985383376,false
 67.213.119.41,Chicago,Illinois,US,41.8500 -87.6500,AS262287 Latitude.sh LTDA,America/Chicago,p1ayS5DGgrM7m1VU4zcppoTWPbcFGhrBYTh7Wm6ApAC,23746766005206,true
-212.83.42.40,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,PAD9aPiKJGcbGxuVLbc8o4Vf65GPq3fJQ7PkHWuX6a8,245424206385004,false
+217.170.200.158,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,PAD9aPiKJGcbGxuVLbc8o4Vf65GPq3fJQ7PkHWuX6a8,245424206385004,false
 192.41.71.184,Pleasant Grove,Utah,US,40.3641 -111.7385,AS13767 DataBank Holdings  Ltd.,America/Denver,parafiUS6h6oLhCFwhjvEmQJKw8pF1iXsxMJdTq46dS,24302690352169,false
-84.32.186.106,Amsterdam,North Holland,NL,52.3740 4.8897,AS59642 UAB Cherry Servers,Europe/Amsterdam,PAWsME7oYbjt5TRNc11mBa33JhKnQr9AYherdr9YAZ6,267155974981641,false
+213.163.64.153,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,PAWsME7oYbjt5TRNc11mBa33JhKnQr9AYherdr9YAZ6,267155974981641,false
 64.176.14.183,Santiago,Santiago Metropolitan,CL,-33.4569 -70.6483,AS20473 The Constant Company  LLC,America/Santiago,peNgUgnzs1jGogUPW8SThXMvzNpzKSNf3om78xVPAYx,1100041625,false
 173.231.22.242,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,pGUjdSpmoYcNwY4SVfnMtQxDc6W4eyUjyu3FhArgucg,18964807597520,true
 72.46.84.221,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,phz1CRbEsCtFCh2Ro5tjyu588VU1WPMwW9BJS9yFNn2,234397553993054,false
@@ -1202,16 +1222,19 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 72.251.3.220,Toronto,Ontario,CA,43.7064 -79.3986,AS16276 OVH SAS,America/Toronto,PPdwxwyhXWBa3W8uxGDJx7xpfsgj76Ef1fXbjYnANTm,19010833033216,false
 64.130.56.52,Pittsburgh,Pennsylvania,US,40.4406 -79.9959,AS20326 TeraSwitch Networks Inc.,America/New_York,ppppoqHcHVzigV6SK4856BAsNxhTAi32hqQQWrziyHE,79630516552493,false
 103.28.89.181,Tseung Kwan O,Sai Kung,HK,22.3279 114.2499,AS206264 Amarutu Technology Ltd,Asia/Hong_Kong,PRGNnb8DxVcP2WjSHfVRGgc8SkA5u6dbMwoTVV1BGKN,263155217543905,false
+64.130.55.12,Amsterdam,North Holland,NL,52.3740 4.8897,AS20326 TeraSwitch Networks Inc.,Europe/Amsterdam,PULSARKCJTG5xMoJTxaKHtVzr9H4Kv84haZnnewArAG,61153613260050,false
 72.46.85.217,Dallas,Texas,US,32.7831 -96.8067,AS396356 Latitude.sh,America/Chicago,PUmpKiNnSVAZ3w4KaFX6jKSjXUNHFShGkXbERo54xjb,1121453787766920,false
 185.26.10.33,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,q9XWcZ7T1wP4bW9SB4XgNNwjnFEJ982nE8aVbbNuwot,8597016963511231,false
 46.229.233.175,Bratislava,Bratislava Region,SK,48.1482 17.1067,AS29405 VNET a.s.,Europe/Bratislava,qZMH9GWnnBkx7aM1h98iKSv2Lz5N78nwNSocAxDQrbP,283826110276081,false
 37.72.171.10,Haarlem,North Holland,NL,52.3904 4.6573,AS29802 HIVELOCITY  Inc.,Europe/Amsterdam,R1parD2CtxPBGPABB2m3JjuLpGgNLiJuLxyt7qvAJR3,59414853178465,false
+69.67.150.142,Miami,Florida,US,25.7743 -80.1937,AS262287 Latitude.sh LTDA,America/New_York,radM7PKUpZwJ9bYPAJ7V8FXHeUmH1zim6iaXUKkftP9,231902589622262,false
 67.213.113.101,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS396356 Latitude.sh,Europe/Berlin,rapXHroUoGG3KvZ3qwjvGMdA7siWXwXpiNC1bYarvSC,55317093069439,false
 80.239.223.71,Prague,Prague,CZ,50.0880 14.4208,AS1299 Arelion Sweden AB,Europe/Prague,RBFiUqjYuy4mupzZaU96ctXJBy23sRBRsL3KivDAsFM,681257535786129,false
 88.216.198.205,Chicago,Illinois,US,41.8500 -87.6500,AS204770 UAB Cherry Servers,America/Chicago,RFLCTDRBVZTEbXrCd92jnKghYeDJARb6ByK2JnPfQmH,39189028943162,true
 91.189.180.218,Oslo,Oslo,NO,59.9127 10.7461,AS34989 ServeTheWorld AS,Europe/Oslo,RhoAkvPz4uJY6F5EnmBSHnFFEeyA9rt9Rvp95G6HraT,83485069216249,false
 89.42.231.17,Lelystad,Flevoland,NL,52.5083 5.4750,AS206264 Amarutu Technology Ltd,Europe/Amsterdam,rmnh7A7y6LuSPph6x9JxNN1dzLZ1NoXSMGBemMJMwZZ,165829228519081,false
 80.239.223.72,Prague,Prague,CZ,50.0880 14.4208,AS1299 Arelion Sweden AB,Europe/Prague,RNXnAJV1DeBt6Lytjz4wYzvS3d6bhsfidS5Np4ovwZz,560030748068826,true
+64.130.57.85,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,Rosss8KdLc366Hg8tqigieoLiXWUwguw9giX4HP1UsE,68040137202785,false
 65.20.100.25,Alcobendas,Madrid,ES,40.5316 -3.6475,AS20473 The Constant Company  LLC,Europe/Madrid,RoYFUUD7QD9aQ34UCMcwfye8dC5YvJeXz2J3mmoy5S4,187129302030444,false
 216.158.90.18,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,rRLKNqoVbxSfff2FWjXuEjEkHKMscbhYe6vAQfsBJuB,23410707758669,false
 85.195.116.99,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS29066 velia.net Internetdienste GmbH,Europe/Berlin,rssaJ2iKcE9QWsFYRZr8Q66TQh5bRk9DxYrzxGMzWQr,13964816386766,false
@@ -1263,11 +1286,14 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 45.152.160.33,Frankfurt am Main,Hesse,DE,50.1155 8.6842,AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,SWnetabTLirPWqEK1V1T7HkVLC5vGvfjEsb89wiqrGh,221555100451204,false
 45.32.239.163,Haarlem,North Holland,NL,52.3904 4.6573,AS20473 The Constant Company  LLC,Europe/Amsterdam,Syrd2b19zpvDrSTSkUzRUoPm9xpJkPtfKj77oGDCUHN,19924708128027,false
 169.197.86.61,New York City,New York,US,40.7143 -74.0060,AS26548 PureVoltage Hosting Inc.,America/New_York,sZAqxCSN5kkVfG2s65Bje4jzCkD2aLyk21qU95PMf2Y,37943478262250,false
+216.128.150.115,Elk Grove Village,Illinois,US,42.0076 -87.9931,AS20473 The Constant Company  LLC,America/Chicago,tcrkE5QNG87Zbexm6fdWMbn7A5MjLC4ML7i1JfHF7cj,74263596238859,false
 45.59.163.2,Dallas,Texas,US,32.8152 -96.8703,AS397423 Tier.Net Technologies LLC,America/Chicago,THWsLPufeq9LWs2H9vYPbtFwdxAHbQHvSbT6pztG8x1,13617744131949,false
 31.204.159.157,Rotterdam,South Holland,NL,51.9225 4.4792,AS49544 i3D.net B.V,Europe/Amsterdam,TiMxX1yasS4CiGyRcnn7sy9T2fvaNdFpkf8tFDhhDkG,86021965102041,false
 162.246.20.102,New York City,New York,US,40.7143 -74.0060,AS19318 Interserver  Inc,America/New_York,TJxW8fs18KgZp1G4ghMkR5GsxdiKMbgpan4weFThaQ5,18839138445294,false
 45.250.254.233,Ashburn,Virginia,US,39.0437 -77.4875,AS396356 Latitude.sh,America/New_York,tkmaiSoZ3F8MofkQBVWG6JYSCzyN6ioe7ReYXohx3WJ,57956897851629,false
+84.32.186.121,Amsterdam,North Holland,NL,52.3740 4.8897,AS59642 UAB Cherry Servers,Europe/Amsterdam,tPTMVvqGgzecHLQKHUhoXR8UFuZrFzz9UKK4ywVdLaZ,29968099948172,false
 108.171.214.2,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,Tri1F8B6YtjkBztGCwBNSLEZib1EAqMUEUM7dTT7ZG3,234205982594518,false
+67.209.52.154,London,England,GB,51.5085 -0.1257,AS20326 TeraSwitch Networks Inc.,Europe/London,TRUMPdBAv1xG1BeuiYMbeqCzySBVpkPtw2bfL8x2GJA,89974906121902,false
 67.213.117.63,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,TrUtH9WTw1jBVuuExpm3MnC5XF7mW6J3x6oXXA9yX4U,54503394964804,false
 186.233.187.130,Chicago,Illinois,US,41.8500 -87.6500,AS262287 Latitude.sh LTDA,America/Chicago,tYeqa8a29XqdD8xUbL5S1pAaWDt6ADFKCPytqFxPCwL,116415514242550,false
 67.213.117.47,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,ubmPuSVEsbd4W2gi85u8ZPisUNRUTVMXNCTR8AxDaxY,34247983486043,false
@@ -1288,6 +1314,7 @@ IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
 62.113.194.248,Frankfurt am Main,Hesse,DE,50.1025 8.6299,AS47447 23M GmbH,Europe/Berlin,w3iDxC22CnKLUcST77cp5ZPGbEjXGrp5gvgtEPNNMaA,70671265119231,false
 142.4.53.58,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,WENqavduvNNv1LbwCJPRDr4ZmrdvdfF2SZNrKTAV7pm,49673472344550,false
 67.213.117.59,London,England,GB,51.5085 -0.1257,AS396356 Latitude.sh,Europe/London,wetkjRRRDrSPAzHqfVHtFDbhNnejKm5UPfkHeccFCpo,54556441078446,false
+64.130.57.86,Frankfurt am Main,Hesse,DE,50.1924 8.6753,AS20326 TeraSwitch Networks Inc.,Europe/Berlin,wiFDeRHa4zcPvrZzdrnBEYCWAjMTjnV2vBgQeCpWSa9,87291217845193,false
 46.166.162.139,Šiauliai,Siauliai,LT,55.9333 23.3167,AS16125 UAB Cherry Servers,Europe/Vilnius,WUNoB9YQXmXXRcJsjY1G8PfVag5aAfnyGmFd6YwJVwp,119996497706974,false
 192.69.220.146,Salt Lake City,Utah,US,40.7608 -111.8911,AS18450 WebNX  Inc.,America/Denver,wwE7xHLfPd91XRti1AAzBv2zTEYayNmUh4bkJNSvyDf,23293290933229,false
 64.130.53.21,Bluffdale,Utah,US,40.4897 -111.9388,AS20326 TeraSwitch Networks Inc.,America/Denver,Xbk4tCYoTmxDH98ymRKyh95h5LEUaH229YbiP5avzyW,2191209261,false
