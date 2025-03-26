@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "start": "deno run --env-file=./.env --allow-env --allow-net --allow-read --allow-write ./src/main.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "imports": {
+    "axiod": "https://deno.land/x/axiod/mod.ts",
+    "progressbar": "https://deno.land/x/progressbar@v0.2.0/progressbar.ts",
+    "widgets": "https://deno.land/x/progressbar@v0.2.0/widgets.ts"
+  }
+}

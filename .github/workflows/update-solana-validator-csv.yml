@@ -24,7 +24,7 @@ jobs:
         run: echo "IPINFO_API_KEY=${{ secrets.IPINFO_API_KEY }}" > .env
 
       - name: Run Deno script
-        run: deno run --env-file=.env -A ./main.ts
+        run: deno task start
 
       - name: Commit and push changes
         id: commit

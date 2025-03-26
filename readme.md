@@ -34,7 +34,13 @@ cp .env.example .env
 Execute the script using Deno:
 
 ```sh
-deno run --env-file=.env --allow-env --allow-net --allow-write main.ts
+deno task start
+```
+
+or
+
+```sh
+deno run --env-file=.env --allow-env --allow-net --allow-write ./src/main.ts
 ```
 
 ### Required Permissions
@@ -47,30 +53,45 @@ deno run --env-file=.env --allow-env --allow-net --allow-write main.ts
 
 The script generates a `solana_validators.csv` file containing the following columns:
 
-- IP
-- City
-- Region
-- Country
-- Loc (Latitude, Longitude)
-- Hosting (Hosting Organization)
-- Timezone
-- Pubkey (Validator Public Key)
-- Activated Stake (the stake, in lamports, delegated to this vote account and active in this epoch)
-- RPC (`true` if `:8899` port is open)
+The output CSV file contains the following columns:
+
+| Column | Description |
+|--------|-------------|
+| IP | IP address of the validator node |
+| City | City where the validator is located |
+| Region | Region/State where the validator is located |
+| Country | Country where the validator is located |
+| Loc | Geographical coordinates (Latitude, Longitude) |
+| Hosting | Hosting organization or ISP |
+| HostingCompanyId | Autonomous System Number (ASN) identifier for the hosting provider (e.g., AS20326) |
+| Timezone | Timezone of the validator location |
+| Name | Validator name |
+| Website | Validator's website URL |
+| IconUrl | URL to validator's icon/image |
+| Details | Additional validator details |
+| KeybaseUsername | Validator's Keybase username |
+| ActivatedStake | Total stake (in lamports) delegated to this vote account and active in current epoch |
+| Commission | Validator's commission rate (percentage) |
+| NodePubkey | Public key of the validator node |
+| VotePubkey | Public key of the validator's vote account |
+| ProgramAccount | Public key of the validator's program account |
+| ValidatorVersion | Version of the Solana software running on the validator |
+| IsJito | Boolean indicating whether the validator is part of the Jito MEV network |
 
 ## Example Output
 
 ```csv=
-IP,City,Region,Country,Loc,Hosting,Timezone,Pubkey,ActivatedStake,RPC
-149.248.1.76,Los Angeles,California,US,"34.0614 -118.2385",AS20473 The Constant Company  LLC,America/Los_Angeles,138KHwTqKNWGLoo8fK5i8UxYtwoC5tC8o7M9rY1CDEjT,43792707979020,false
-80.77.175.80,Moscow,Moscow,RU,"55.7522 37.6156",AS28917 Fiord Networks  UAB,Europe/Moscow,13cm6z7ajighVFYN1aR2hPQ3Rhp4QJenDbHGRmps9P1n,23772438369958,false
-46.166.162.219,Šiauliai,Siauliai,LT,"55.9333 23.3167",AS16125 UAB Cherry Servers,Europe/Vilnius,1EWZm7aZYxfZHbyiELXtTgN1yT2vU1HF9d8DWswX2Tp,39986855237688,false
-45.152.160.122,Frankfurt am Main,Hesse,DE,"50.1155 8.6842",AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,1KXvrkPXwkGF6NK1zyzVuJqbXfpenPVPP6hoiK9bsK3,277729040980867,false
-45.135.201.211,Frankfurt am Main,Hesse,DE,"50.1155 8.6842",AS44486 Oliver Horscht is trading as "SYNLINQ",Europe/Berlin,1MuaDGhuN7KRqvsupUcYmq9u1YRh1pp38hu1WV2WC6S,88514991236096,false
-189.1.164.11,Tokyo,Tokyo,JP,"35.6895 139.6917",AS396356 Latitude.sh,Asia/Tokyo,1NF88KpPdxVAwRSc17cEpwmfusxrrkRmR7G7u8cEva8,27173358209151,false
-23.111.180.186,Tampa,Florida,US,"28.0091 -82.5034",AS29802 HIVELOCITY  Inc.,America/New_York,1so1ctTM24PdU7RLZJzJKYYVYri3gjNeCd8nmHbpdXg,26983187065045,false
-216.238.89.228,El Colorado,Querétaro,MX,"20.5618 -100.2452",AS20473 The Constant Company  LLC,America/Mexico_City,1unarWPGGseFag2WfnoFv8o9P7vTPU8eHex9GinP3eY,365176060171384,false
-31.128.59.215,Moscow,Moscow,RU,"55.7522 37.6156",AS215457 DCS LLC,Europe/Moscow,1znL3zFHi3znoaz6T6rnnEnRj8Ar3fohDq7ZNk37sUL,153701155247935,false
+IP,City,Region,Country,Loc,Hosting,HostingCompanyId,Timezone,Name,Website,IconUrl,Details,KeybaseUsername,ActivatedStake,Commission,NodePubkey,VotePubkey,ProgramAccount,ValidatorVersion,IsJito
+212.83.42.45,Frankfurt am Main,Hesse,DE,50.1025 8.6299,23M GmbH,AS47447,Europe/Berlin,Woof Validator,https://sites.google.com/view/woof-validator/home,https://drive.google.com/file/d/1hxZzM9OCF9gtjHZ--q3Yq1rzxB_NknYH/view,Woof Woof Woof - Stake with my family,,105592816323,0,srmbYzMjbuL7eNEwSeZcDdVkoiPKPLfzBTezxjh1xUg,11aa3vsKxzxkcFX32VvCSA94bTa9EjKqUr8hfFgchjN,FXVnTD4wKuH69fuBYbKUS2bFXbRpLQBUJmfHSGwBcVGB,2.1.16,false
+212.83.42.40,Frankfurt am Main,Hesse,DE,50.1025 8.6299,23M GmbH,AS47447,Europe/Berlin,BlueLotus 👩‍💻,https://www.bluelotus.one/,https://storage.googleapis.com/bluelotus/bluelotus.png, Stable Returns + MEV Bonus 🥇 Twitter : @bluelotussolana,,245238703667047,0,PAD9aPiKJGcbGxuVLbc8o4Vf65GPq3fJQ7PkHWuX6a8,1234LB7uvDC23rdCQoK8C3jNwnovUNyeKxz8wC3dghJ5,5cQnExYePUvjQRfoo3zZwFCt1CiX1bX8iT3mWXQNghET,2.1.16,true
+185.187.154.151,Maastricht,Limburg,NL,50.8483 5.6889,Albanian Hosting SH.P.K.,AS48014,Europe/Amsterdam,MMGuru,https://moneymakers.guru/,,Сrypto enthusiast  noderunner,mmguru,849625392564,5,EY9dfKzLHCetix2ir7tmSMhkYrPfWSUYKn8XPKzgvdgK,12pVREJSt8d5AV4aBzGFf3QZn3qo8DWmwBQu3wQ5RAZ9,7pb3cPcnZvV7YNAkAZ8yXGHWsqht3aj1CpHc8H9Q2pQd,2.1.11,true
+216.18.201.138,Salt Lake City,Utah,US,40.7608 -111.8911,WebNX  Inc.,AS18450,America/Denver,,,,,,18004139138625,5,7P5GvWEpPWjJaVbogDkpR4KhTLAoX7WB8vcSdFSPZnHT,137MRxQWHC47fFiT1F6vDsTBzEuZJb9SwTt2rm3nHLYM,,2.1.14,true
+103.241.50.11,Frankfurt am Main,Hesse,DE,50.1155 8.6842,Michael Sebastian Schinzel trading as IP-Projects GmbH & Co. KG,AS48314,Europe/Berlin,goto5k,http://goto5k.me/,,validator goto5k,goto5k,25226693525498,5,BwxhmqZRmVKfDkhb3ZvNUVdrLZXQBumMrvexoYrViAoU,14YCghb1uYPreALx6arirtPAnoGghoPH2Ac6gCmNQdq7,Bk97MVQvAcZfLrTuevCiuQnGpiCAPtc89tARWawuJog6,2.1.11,true
+149.255.37.218,Haarlem,North Holland,NL,52.3904 4.6573,HIVELOCITY  Inc.,AS29802,Europe/Amsterdam,1Dad 🚀 0% Fee,http://1dad.io,https://i.ibb.co/bHpzD8M/icon.png,Dad of three  stepdad to four more  full-time parent and crypto enthusiast running Solana to feed the family on a budget. Support us by staking! ❤️,1dad,269849351987164,0,FyrwfMaomErzqrFUXMjCJ7mA4u81DsiDdrzC3MJD6d4j,1Dadio3JRvpEjY6iSmXmhbGy9RiU8Nxh2GmoVbNusbE,GyB4iqrKPo29LzCvgncTjbt9QZzc7fiKhDd1JZXBXt7Z,2.1.16,true
+199.247.18.165,Frankfurt am Main,Hesse,DE,50.1155 8.6842,The Constant Company  LLC,AS20473,Europe/Berlin,Piranha,https://solanapiranha.com,https://i.ibb.co/XktG1S7/Piranha.jpg,Solana Piranha validator - 0% commission - nom nom nom nom,,233592250630230,0,8mhdbYU3PxALpTfDrdTYvk5obaGxL8ATQMvCLXW9SV2L,1eufsJbqNgMProke17FLSw7JrD97fYhGggrnH9zyWnG,BCvnPp2A1pKqa9wx5BfxungNzCjabfJ6W3gBNoUA3LUM,2.1.14,true
+45.152.160.122,Frankfurt am Main,Hesse,DE,50.1155 8.6842,Oliver Horscht is trading as SYNLINQ,AS44486,Europe/Berlin,1000X.sh,https://1000x.sh,,Stake with the best,1000xstake,279868590009091,0,1KXvrkPXwkGF6NK1zyzVuJqbXfpenPVPP6hoiK9bsK3,1KXz4xKV2viJCGpxqnQqdf2J45vQr5USdmtcJLTaHkm,qypVLWiBNaxR4nSSecfDCHBueTPxqekyQxuBEw2FV71,2.1.14,true
+91.189.180.246,Oslo,Oslo,NO,59.9127 10.7461,ServeTheWorld AS,AS34989,Europe/Oslo,Vadym.exe,,,,,17875711107771,0,GnZB2GTH8KJKqU3L4tR42a7BnKXxvgS9rerGMAszNCp,1M5USfamd1N4i1z6UZeECrWeu2VfrxjYMBSXThu6TqB,AgmSb44WYhhj9eD95k1TwUNFNjQK5StWWqq5Ks1e4RPG,2.1.14,true
+
 ```
 
 ## License
