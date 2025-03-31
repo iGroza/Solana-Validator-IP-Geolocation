@@ -40,6 +40,7 @@
       href="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.3/styles/ag-theme-material.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@31.0.3/dist/ag-grid-community.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <style>
       * {
         margin: 0;
@@ -113,6 +114,17 @@
         gap: 12px;
         align-items: center;
         flex-wrap: wrap;
+      }
+
+      .data-info {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 8px;
+        font-size: 12px;
+        color: var(--text-secondary);
+        text-align: right;
+        white-space: nowrap;
       }
 
       .switch-container {
@@ -190,6 +202,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        font-size: 14px;
       }
 
       .button:hover {
@@ -202,11 +215,72 @@
         background-color: var(--accent-secondary);
         color: #000;
         border: none;
+        font-weight: 500;
+        padding: 10px 20px;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(20, 241, 149, 0.2);
+        position: relative;
       }
 
       .download-btn:hover {
         background-color: #12d985;
         color: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(20, 241, 149, 0.3);
+      }
+
+      .download-btn:hover .tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -10px);
+      }
+
+      .tooltip {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+      }
+
+      .tooltip:before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 6px 6px 6px;
+        border-style: solid;
+        border-color: transparent transparent var(--bg-secondary) transparent;
+      }
+
+      .download-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 2px rgba(20, 241, 149, 0.2);
+      }
+
+      .download-btn svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+        transition: transform 0.2s ease;
+        filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+      }
+
+      .download-btn:hover svg {
+        transform: translateY(1px);
+        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
       }
 
       #statistics {
@@ -389,6 +463,13 @@
           margin-top: 30px;
           margin-bottom: 20px;
         }
+
+        .data-info {
+          position: fixed;
+          bottom: 20px;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+        }
       }
 
       /* Remove any duplicate chart styles */
@@ -471,6 +552,99 @@
       .ag-center-cols-container {
         min-width: 100%;
       }
+
+      /* Download Overlay Styles */
+      .download-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .download-overlay.active {
+        display: flex;
+      }
+
+      .download-content {
+        background-color: var(--bg-secondary);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        min-width: 300px;
+        box-shadow: var(--card-shadow);
+      }
+
+      .download-content h3 {
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto 1.5rem;
+        border: 3px solid var(--bg-tertiary);
+        border-top-color: var(--accent-secondary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .progress-container {
+        margin: 1.5rem 0;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background-color: var(--bg-tertiary);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+      }
+
+      .progress-fill {
+        width: 0%;
+        height: 100%;
+        background-color: var(--accent-secondary);
+        transition: width 0.3s ease;
+      }
+
+      .progress-text {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+      }
+
+      .status-text {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-top: 1rem;
+      }
+
+      /* Button styles */
+      button.button {
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      button.button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
     </style>
   </head>
   <body>
@@ -480,7 +654,7 @@
         <p id="last-update"></p>
         <img
           width="50px"
-          src="https://badges.pufler.dev/visits/iGroza/Solana-Validator-IP-Geolocation-page"
+          src="https://badges.pufler.dev/visits/iGroza/Solana-Validator-IP-Geolocation-page111"
         />
       </div>
       <div class="header-buttons">
@@ -501,20 +675,20 @@
           >View on GitHub</a
         >
         <a href="solana_validators.csv" download class="button download-btn"
-          ><svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 16L7 11H10V4H14V11H17L12 16Z" fill="currentColor" />
-            <path
-              d="M20 18H4V11H2V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V11H20V18Z"
-              fill="currentColor"
-            /></svg
-          >Download CSV</a
+          ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3V16M12 16L7 11M12 16L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 15V16C3 17.6569 4.34315 19 6 19H18C19.6569 19 21 17.6569 21 16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>Download CSV
+          <div class="tooltip">Data from <span id="csv-date">last update</span></div></a
         >
+        <button id="download-all-btn" class="button download-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3V16M12 16L7 11M12 16L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 15V16C3 17.6569 4.34315 19 6 19H18C19.6569 19 21 17.6569 21 16V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          All CSV History
+          <div class="tooltip">Data collection started March 27, 2025 (<span id="days-count">0</span> days of historical data)</div>
+        </button>
         <div class="switch-container">
           <span class="switch-label">Show Jito Only</span>
           <label class="switch">
@@ -629,6 +803,20 @@
     <footer>
       <p id="footer"></p>
     </footer>
+    <!-- Download Overlay -->
+    <div id="download-overlay" class="download-overlay">
+      <div class="download-content">
+        <div class="spinner"></div>
+        <h3>Downloading CSV Files</h3>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="progress-text">0%</div>
+        </div>
+        <div class="status-text">Preparing download...</div>
+      </div>
+    </div>
     <script>
       // Set dark mode for Chart.js
       Chart.defaults.color = "#b3b3b3";
@@ -733,16 +921,21 @@
           const { timestamp } = await fetch(
             "https://igroza.github.io/Solana-Validator-IP-Geolocation/last_update.json"
           ).then((r) => r.json());
-          document.getElementById(
-            "last-update"
-          ).textContent = `Last update: ${new Date(
-            timestamp
-          ).toDateString()} (automatic update every 24 hours)`;
+          const updateDate = new Date(timestamp).toDateString();
+          document.getElementById("last-update").textContent = `Last update: ${updateDate} (automatic update every 24 hours)`;
+          document.getElementById("csv-date").textContent = updateDate;
         } catch (error) {
           console.error("Error fetching last update:", error);
-          document.getElementById("last-update").textContent =
-            "Last update: Data unavailable";
+          document.getElementById("last-update").textContent = "Last update: Data unavailable";
+          document.getElementById("csv-date").textContent = "Data unavailable";
         }
+
+        // Calculate days of data collection
+        const startDate = new Date('2025-03-27');
+        const today = new Date();
+        const diffTime = Math.abs(today - startDate);
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        document.getElementById('days-count').textContent = diffDays;
       });
 
       const chartColors = {
@@ -1303,6 +1496,132 @@
             <p>Could not load the Solana validators data. Please check your connection and try again.</p>
           </div>`;
         });
+
+      // Download All CSV functionality
+      document.getElementById('download-all-btn').addEventListener('click', async () => {
+        const overlay = document.getElementById('download-overlay');
+        const progressFill = document.querySelector('.progress-fill');
+        const progressText = document.querySelector('.progress-text');
+        const statusText = document.querySelector('.status-text');
+        const downloadBtn = document.getElementById('download-all-btn');
+
+        // Show overlay and disable button
+        overlay.classList.add('active');
+        downloadBtn.disabled = true;
+
+        try {
+          // Get the list of available dates from GitHub releases
+          const response = await fetch('https://api.github.com/repos/iGroza/Solana-Validator-IP-Geolocation/releases');
+          const releases = await response.json();
+          
+          // Filter releases to get only date-tagged ones
+          const dateReleases = releases
+            .filter(release => {
+              const releaseDate = new Date(release.tag_name.replace('date-', ''));
+              const startDate = new Date('2025-03-27');
+              return release.tag_name.startsWith('date-') && releaseDate >= startDate;
+            })
+            .sort((a, b) => b.tag_name.localeCompare(a.tag_name));
+
+          if (dateReleases.length === 0) {
+            throw new Error('No date-tagged releases found after March 27th, 2025');
+          }
+
+          // Create a zip file
+          const zip = new JSZip();
+          let downloadedCount = 0;
+
+          // Rate limiting configuration
+          const MAX_CONCURRENT_DOWNLOADS = 3;
+          const RATE_LIMIT_DELAY = 1000; // 1 second delay between requests
+          const queue = [...dateReleases];
+          const activeDownloads = new Set();
+
+          // Function to delay execution
+          const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+          // Function to download a single file
+          const downloadFile = async (release) => {
+            const date = release.tag_name.replace('date-', '');
+            const url = `https://raw.githubusercontent.com/iGroza/Solana-Validator-IP-Geolocation/${release.tag_name}/solana_validators.csv`;
+            
+            try {
+              const response = await fetch(url, {
+                headers: {
+                  'Accept': 'text/plain'
+                }
+              });
+              
+              if (!response.ok) {
+                throw new Error(`Failed to download ${date}: ${response.status}`);
+              }
+              
+              const csvContent = await response.text();
+              if (!csvContent || csvContent.trim() === '') {
+                throw new Error(`Empty content received for ${date}`);
+              }
+              
+              zip.file(`${date}.csv`, csvContent);
+              
+              downloadedCount++;
+              const progress = (downloadedCount / dateReleases.length) * 100;
+              progressFill.style.width = `${progress}%`;
+              progressText.textContent = `${Math.round(progress)}%`;
+              
+              statusText.textContent = `Downloaded ${date} (${downloadedCount}/${dateReleases.length})`;
+            } catch (error) {
+              console.error(`Error downloading ${date}:`, error);
+              statusText.textContent = `Error downloading ${date}, continuing with other files...`;
+            } finally {
+              activeDownloads.delete(release);
+            }
+          };
+
+          // Process queue with rate limiting
+          while (queue.length > 0 || activeDownloads.size > 0) {
+            // Fill up active downloads if we have capacity
+            while (activeDownloads.size < MAX_CONCURRENT_DOWNLOADS && queue.length > 0) {
+              const release = queue.shift();
+              activeDownloads.add(release);
+              downloadFile(release);
+            }
+
+            // Wait before processing next batch
+            await delay(RATE_LIMIT_DELAY);
+          }
+
+          // Generate and download the zip file
+          statusText.textContent = 'Creating zip archive...';
+          const zipContent = await zip.generateAsync({ type: 'blob' });
+          const zipUrl = URL.createObjectURL(zipContent);
+          
+          const link = document.createElement('a');
+          link.href = zipUrl;
+          link.download = 'solana_validators_history.zip';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(zipUrl);
+
+          // Reset UI
+          statusText.textContent = 'Download complete!';
+          setTimeout(() => {
+            overlay.classList.remove('active');
+            downloadBtn.disabled = false;
+            progressFill.style.width = '0%';
+            progressText.textContent = '0%';
+          }, 1500);
+        } catch (error) {
+          console.error('Error during download:', error);
+          statusText.textContent = 'Error: Failed to download files. Please try again.';
+          setTimeout(() => {
+            overlay.classList.remove('active');
+            downloadBtn.disabled = false;
+            progressFill.style.width = '0%';
+            progressText.textContent = '0%';
+          }, 3000);
+        }
+      });
     </script>
   </body>
 </html>
