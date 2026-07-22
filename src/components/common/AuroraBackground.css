@@ -1,0 +1,83 @@
+/* Living atmospheric background — drifting Solana-tinted aurora blobs +
+   cursor glow. Purple -> green -> cyan, low opacity, heavily blurred. */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--bg-page);
+  --mx: 50vw;
+  --my: 30vh;
+}
+
+.aurora__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(96px);
+  opacity: 0.42;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.aurora__blob--1 {
+  width: 48vw; height: 48vw;
+  min-width: 440px; min-height: 440px;
+  top: -14%; left: -10%;
+  background: radial-gradient(circle at 50% 50%, rgba(153, 69, 255, 0.75), rgba(153, 69, 255, 0) 68%);
+  animation: aurora-drift-1 28s ease-in-out infinite;
+}
+.aurora__blob--2 {
+  width: 42vw; height: 42vw;
+  min-width: 380px; min-height: 380px;
+  top: 14%; right: -12%; left: auto;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 241, 149, 0.6), rgba(20, 241, 149, 0) 68%);
+  animation: aurora-drift-2 34s ease-in-out infinite;
+}
+.aurora__blob--3 {
+  width: 40vw; height: 40vw;
+  min-width: 360px; min-height: 360px;
+  bottom: -16%; left: 24%;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 194, 255, 0.34), rgba(0, 194, 255, 0) 70%);
+  animation: aurora-drift-3 40s ease-in-out infinite;
+}
+
+.aurora__cursor {
+  position: absolute;
+  left: var(--mx);
+  top: var(--my);
+  width: 540px; height: 540px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(153, 69, 255, 0.2), rgba(20, 241, 149, 0) 60%);
+  transition: opacity 0.6s var(--ease);
+}
+.aurora--interactive .aurora__cursor { opacity: 1; }
+
+.aurora__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes aurora-drift-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(8vw, 6vh, 0) scale(1.12); }
+  66% { transform: translate3d(-4vw, 10vh, 0) scale(0.95); }
+}
+@keyframes aurora-drift-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  40% { transform: translate3d(-9vw, 8vh, 0) scale(1.15); }
+  70% { transform: translate3d(-3vw, -6vh, 0) scale(0.92); }
+}
+@keyframes aurora-drift-3 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(6vw, -8vh, 0) scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora__blob { animation: none !important; }
+  .aurora__cursor { display: none; }
+}

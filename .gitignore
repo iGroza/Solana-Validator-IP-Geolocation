@@ -1,5 +1,7 @@
 .env
-.DS_store
+.DS_Store
 .vscode
 node_modules
+dist
+*.tsbuildinfo
 .lock

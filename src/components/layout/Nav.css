@@ -1,0 +1,107 @@
+/* Sticky top navigation — blurred dark bar, mono brand, Solana accent hover. */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: rgba(14, 16, 20, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  backdrop-filter: blur(20px) saturate(1.4);
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-24);
+  height: 64px;
+}
+
+/* — brand — */
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-right: auto;
+}
+.nav__mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--accent-gradient);
+  color: var(--bg);
+  font-size: 0.85rem;
+}
+.nav__name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.nav__brand:hover .nav__name { color: var(--white); }
+
+/* — links — */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+.nav__link {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.nav__link:hover { color: var(--text-primary); background: var(--surface-hover); }
+.nav__link.is-active { color: var(--white); }
+.nav__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 2px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-gradient);
+}
+
+/* — github ghost button — */
+.nav__github {
+  flex-shrink: 0;
+}
+.nav__lang {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.nav__lang:hover { color: var(--white); background: var(--surface-hover); border-color: var(--border-strong); }
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__github span { display: none; }
+  .nav__github { width: 38px; padding-inline: 0; justify-content: center; }
+}

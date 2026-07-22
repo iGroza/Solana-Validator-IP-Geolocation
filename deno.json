@@ -1,6 +1,7 @@
 {
+  "exclude": ["src", "dist", "node_modules", "prerender.mjs", "vite.config.ts"],
   "tasks": {
-    "start": "deno run --env-file=./.env --allow-env --allow-net --allow-read --allow-write ./src/main.ts"
+    "start": "deno run --env-file=./.env --allow-env --allow-net --allow-read --allow-write ./pipeline/main.ts"
   },
   "compilerOptions": {
     "lib": ["deno.window"],

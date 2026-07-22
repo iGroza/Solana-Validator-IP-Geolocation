@@ -1,0 +1,37 @@
+{
+  "version": "5",
+  "redirects": {
+    "https://deno.land/x/axiod/mod.ts": "https://deno.land/x/axiod@0.26.2/mod.ts"
+  },
+  "remote": {
+    "https://deno.land/std@0.170.0/fmt/colors.ts": "03ad95e543d2808bc43c17a3dd29d25b43d0f16287fe562a0be89bf632454a12",
+    "https://deno.land/x/axiod@0.26.2/helpers.ts": "467f2ca75608f368c8092e800eab0d6d79b3fa42346372be62a5b93acf50fe7e",
+    "https://deno.land/x/axiod@0.26.2/interfaces.ts": "1b5a7b70b1e7faecd2f251ad080bd87188fba585e2de667af472c4d72abf636e",
+    "https://deno.land/x/axiod@0.26.2/mod.ts": "1175ec90a040d764b9940753f8d8e3f37a2328a0536eed48e411a8f1a3e9e5cb",
+    "https://deno.land/x/axiod@0.26.2/mods/url-join.ts": "c925b2dd0bd490093d084bd4c74a9502260e014d5e760a4951b3e7c8ab3ca43f",
+    "https://deno.land/x/cliffy@v0.25.7/ansi/colors.ts": "5f71993af5bd1aa0a795b15f41692d556d7c89584a601fed75997df844b832c9",
+    "https://deno.land/x/progressbar@v0.2.0/progressbar.ts": "d571c5505c2afd792d729f2467a017dd3a108c82ecb4421280fa86eec6d25a05",
+    "https://deno.land/x/progressbar@v0.2.0/styles.ts": "2ba8cfb41688c0ca497ed740bda342f55e629043397eef43180665aa34ef2f01",
+    "https://deno.land/x/progressbar@v0.2.0/widgets.ts": "73aa6d06b6a89a4dfd8d15e97ca634bc1e82c7993cd95ba56459f900d2e02838",
+    "https://deno.land/x/url_join@1.0.0/mod.ts": "d3c7007e3ab15594e54d5b90dce623b3e274a726e0cdf57858e7ecab77a0166c"
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@types/leaflet@^1.9.21",
+        "npm:@types/react-dom@^18.3.1",
+        "npm:@types/react@^18.3.12",
+        "npm:@vitejs/plugin-react@^4.3.3",
+        "npm:animejs@^4.4.1",
+        "npm:jszip@^3.10.1",
+        "npm:leaflet@^1.9.4",
+        "npm:react-dom@^18.3.1",
+        "npm:react-is@^18.3.1",
+        "npm:react@^18.3.1",
+        "npm:recharts@^3.9.2",
+        "npm:typescript@^5.7.2",
+        "npm:vite@^5.4.10"
+      ]
+    }
+  }
+}

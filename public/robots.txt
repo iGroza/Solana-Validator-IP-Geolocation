@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sol.igroza.su/sitemap.xml
