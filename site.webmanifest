@@ -1,0 +1,19 @@
+{
+  "name": "Solana Validator Geolocation",
+  "short_name": "Solana Validator Geo",
+  "description": "Interactive live map, statistics and downloadable data on the worldwide geographic distribution of Solana validators.",
+  "lang": "en-US",
+  "start_url": "/Solana-Validator-IP-Geolocation/",
+  "scope": "/Solana-Validator-IP-Geolocation/",
+  "display": "standalone",
+  "background_color": "#0e1014",
+  "theme_color": "#0e1014",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

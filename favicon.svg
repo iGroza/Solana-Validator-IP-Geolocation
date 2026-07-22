@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Solana Validator Geo">
+  <defs>
+    <linearGradient id="sol" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9945FF" />
+      <stop offset="55%" stop-color="#19FB9B" />
+      <stop offset="100%" stop-color="#14F195" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#9945FF" stop-opacity="0.45" />
+      <stop offset="55%" stop-color="#14F195" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0e1014" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="#0e1014" />
+  <rect width="512" height="512" rx="120" fill="url(#glow)" />
+  <rect x="6" y="6" width="500" height="500" rx="114" fill="none" stroke="#e5e5e5" stroke-opacity="0.10" stroke-width="12" />
+  <g>
+    <path d="M160 168 h176 a20 20 0 0 1 14 6 l28 28 a12 12 0 0 1 -8 20 H172 a20 20 0 0 1 -14 -6 l-28 -28 a12 12 0 0 1 8 -20 Z" fill="url(#sol)" />
+    <path d="M160 232 h176 a20 20 0 0 1 14 6 l28 28 a12 12 0 0 1 -8 20 H172 a20 20 0 0 1 -14 -6 l-28 -28 a12 12 0 0 1 8 -20 Z" fill="url(#sol)" opacity="0.85" />
+    <path d="M160 296 h176 a20 20 0 0 1 14 6 l28 28 a12 12 0 0 1 -8 20 H172 a20 20 0 0 1 -14 -6 l-28 -28 a12 12 0 0 1 8 -20 Z" fill="url(#sol)" opacity="0.7" />
+  </g>
+</svg>
