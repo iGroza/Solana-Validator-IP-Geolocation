@@ -6,7 +6,14 @@
 // Strictly client-only: everything is gated on useMounted() and every browser
 // API (timers, AbortController) runs after hydration. All labels go through i18n.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { prefetchDays } from "../../csv/history";
 import { useMounted } from "../../hooks/useMounted";
 import { useI18n } from "../../i18n";
@@ -32,6 +39,84 @@ function fmt(s: string, vars: Record<string, string | number>): string {
   return out;
 }
 
+// ── Reusable upward popover: a trigger button + a panel that opens ABOVE it
+//    (bottom:100%) so it is never clipped by the viewport bottom. Owns
+//    click-outside (pointerdown, so it fires before the trigger re-toggles)
+//    and Escape. Declared at module scope so it is a stable component.
+function ReplayPopup({
+  open,
+  onOpen,
+  onClose,
+  disabled,
+  ariaLabel,
+  className,
+  trigger,
+  children,
+}: {
+  open: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+  disabled?: boolean;
+  ariaLabel: string;
+  className?: string;
+  trigger: ReactNode;
+  children: ReactNode;
+}) {
+  const wrapRef = useRef<HTMLSpanElement | null>(null);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: PointerEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("pointerdown", onDown, true);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown, true);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open, onClose]);
+  // Scroll the active option into view when the panel opens (long date lists).
+  useEffect(() => {
+    if (!open) return;
+    panelRef.current
+      ?.querySelector(".is-active")
+      ?.scrollIntoView({ block: "center" });
+  }, [open]);
+  return (
+    <span
+      className={"replay-pop" + (className ? " " + className : "")}
+      ref={wrapRef}
+    >
+      <button
+        type="button"
+        className={"replay-pop__trigger" + (open ? " is-open" : "")}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        disabled={disabled}
+        onClick={() => (open ? onClose() : onOpen())}
+      >
+        {trigger}
+      </button>
+      {open && (
+        <div
+          ref={panelRef}
+          className="replay-pop__panel"
+          role="listbox"
+          aria-label={ariaLabel}
+        >
+          {children}
+        </div>
+      )}
+    </span>
+  );
+}
+
 export function ReplayBar() {
   const mounted = useMounted();
   const { t } = useI18n();
@@ -46,6 +131,11 @@ export function ReplayBar() {
   const [phase, setPhase] = useState<Phase>("select");
   const [startDate, setStartDate] = useState<string>("");
   const [speedIndex, setSpeedIndex] = useState<number>(DEFAULT_SPEED_INDEX);
+
+  // Which upward popover is open (date list in the select phase, speed list on
+  // mobile). Separate booleans are fine because the two never coexist visually.
+  const [dateOpen, setDateOpen] = useState(false);
+  const [speedOpen, setSpeedOpen] = useState(false);
 
   // Prepared slice + playback position.
   const [slice, setSlice] = useState<string[]>([]);
@@ -81,8 +171,6 @@ export function ReplayBar() {
   }, [mounted, loadAvailableDates]);
 
   const minDate = availableDates[0] ?? "";
-  const maxDate =
-    availableDates.length > 0 ? availableDates[availableDates.length - 1] : "";
   const hasDates = availableDates.length > 0;
 
   const speedMs = SPEEDS[speedIndex]?.ms ?? SPEEDS[DEFAULT_SPEED_INDEX].ms;
@@ -94,6 +182,10 @@ export function ReplayBar() {
       timerRef.current = null;
     }
   }, []);
+
+  // Stable close callbacks so the popover effect deps stay referentially stable.
+  const closeDate = useCallback(() => setDateOpen(false), []);
+  const closeSpeed = useCallback(() => setSpeedOpen(false), []);
 
   // Abort an in-flight prefetch (if any).
   const abortPrefetch = useCallback(() => {
@@ -228,23 +320,61 @@ export function ReplayBar() {
   const atEnd = dayIndex >= slice.length - 1;
 
   const speedChips = (
-    <span
-      className="replay-player__speeds"
-      role="group"
-      aria-label={t("replay.speed")}
-    >
-      {SPEEDS.map((s, i) => (
-        <button
-          key={s.label}
-          type="button"
-          className={"replay__speed" + (i === speedIndex ? " is-active" : "")}
-          aria-pressed={i === speedIndex}
-          onClick={() => setSpeedIndex(i)}
-        >
-          {s.label}
-        </button>
-      ))}
-    </span>
+    <>
+      {/* Desktop: inline chips (hidden on mobile via CSS). Unchanged. */}
+      <span
+        className="replay-player__speeds"
+        role="group"
+        aria-label={t("replay.speed")}
+      >
+        {SPEEDS.map((s, i) => (
+          <button
+            key={s.label}
+            type="button"
+            className={"replay__speed" + (i === speedIndex ? " is-active" : "")}
+            aria-pressed={i === speedIndex}
+            onClick={() => setSpeedIndex(i)}
+          >
+            {s.label}
+          </button>
+        ))}
+      </span>
+      {/* Mobile: single trigger + upward popup (hidden on desktop via CSS). */}
+      <ReplayPopup
+        open={speedOpen}
+        onOpen={() => setSpeedOpen(true)}
+        onClose={closeSpeed}
+        ariaLabel={t("replay.speed")}
+        className="replay-pop--speed"
+        trigger={
+          <>
+            <span>
+              {SPEEDS[speedIndex]?.label ?? SPEEDS[DEFAULT_SPEED_INDEX].label}
+            </span>
+            <i
+              className="fa-solid fa-chevron-up replay-pop__caret"
+              aria-hidden="true"
+            />
+          </>
+        }
+      >
+        {SPEEDS.map((s, i) => (
+          <button
+            key={s.label}
+            type="button"
+            role="option"
+            aria-selected={i === speedIndex}
+            className={"replay-pop__opt" + (i === speedIndex ? " is-active" : "")}
+            onClick={() => {
+              setSpeedIndex(i);
+              setSpeedOpen(false);
+            }}
+          >
+            {s.label}
+          </button>
+        ))}
+      </ReplayPopup>
+    </>
   );
 
   return (
@@ -263,15 +393,44 @@ export function ReplayBar() {
           <div className="replay-player__row">
             <label className="replay-player__field">
               <span className="replay-player__k">{t("replay.selectStart")}</span>
-              <input
-                className="replay__date"
-                type="date"
-                min={minDate}
-                max={maxDate}
-                value={startDate}
+              <ReplayPopup
+                open={dateOpen}
+                onOpen={() => {
+                  if (hasDates) setDateOpen(true);
+                }}
+                onClose={closeDate}
                 disabled={!hasDates}
-                onChange={(e) => setStartDate(e.target.value)}
-              />
+                ariaLabel={t("replay.selectStart")}
+                className="replay-pop--date"
+                trigger={
+                  <>
+                    <i className="fa-solid fa-calendar-day" aria-hidden="true" />
+                    <span>{startDate || t("replay.pickDate")}</span>
+                    <i
+                      className="fa-solid fa-chevron-up replay-pop__caret"
+                      aria-hidden="true"
+                    />
+                  </>
+                }
+              >
+                {availableDates.map((d) => (
+                  <button
+                    key={d}
+                    type="button"
+                    role="option"
+                    aria-selected={d === startDate}
+                    className={
+                      "replay-pop__opt" + (d === startDate ? " is-active" : "")
+                    }
+                    onClick={() => {
+                      setStartDate(d);
+                      setDateOpen(false);
+                    }}
+                  >
+                    {d}
+                  </button>
+                ))}
+              </ReplayPopup>
             </label>
 
             <label className="replay-player__field">

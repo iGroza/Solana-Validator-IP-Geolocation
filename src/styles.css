@@ -1314,6 +1314,79 @@ a.footer__link:hover { color: var(--sol-green); }
   transition: width 0.2s var(--ease);
 }
 .replay-player__pct { font-family: var(--font-display); font-size: 0.8rem; color: var(--text-secondary); flex-shrink: 0; min-width: 42px; text-align: right; }
+
+/* ── Reusable upward popover (date list + mobile speed list). Opens ABOVE
+   the fixed bar; never clipped by the viewport bottom. ── */
+.replay-pop { position: relative; display: inline-flex; flex-shrink: 0; }
+.replay-pop__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding-inline: var(--sp-12);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.replay-pop__trigger:hover { border-color: var(--border-strong); background: var(--surface-hover); }
+.replay-pop__trigger.is-open { border-color: var(--sol-green); background: var(--surface-hover); }
+.replay-pop__trigger:disabled { opacity: 0.45; cursor: not-allowed; }
+.replay-pop__trigger i { color: var(--text-muted); font-size: 0.8rem; }
+.replay-pop__caret { transition: transform 0.2s var(--ease); }
+.replay-pop__trigger.is-open .replay-pop__caret { transform: rotate(180deg); }
+/* Date trigger is a bit wider so the ISO date + caret fit; caret pushes right. */
+.replay-pop--date .replay-pop__trigger { min-width: 148px; justify-content: space-between; }
+
+.replay-pop__panel {
+  position: absolute;
+  bottom: calc(100% + 8px); /* UPWARD: sits above the trigger/bar */
+  left: 0;
+  z-index: 320; /* above the bar (300) + its ::before; below toasts (400) */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 100%;
+  padding: 6px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: rgba(12, 14, 18, 0.96);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  backdrop-filter: blur(24px) saturate(1.5);
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55);
+  animation: replayPopUp 0.16s var(--ease) both;
+}
+@keyframes replayPopUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Date list can be long → scrollable + comfortable min width. Speed list is compact. */
+.replay-pop--date .replay-pop__panel { min-width: 160px; max-height: 260px; overflow-y: auto; }
+.replay-pop--speed .replay-pop__panel { min-width: 92px; }
+
+.replay-pop__opt {
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: calc(var(--radius) - 1px);
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  transition: background 0.15s var(--ease), color 0.15s var(--ease);
+}
+.replay-pop__opt:hover { color: var(--white); background: var(--surface-hover); }
+.replay-pop__opt.is-active { color: var(--bg); background: var(--accent-gradient); }
+
+/* Default (desktop): inline chips visible, mobile speed trigger hidden. */
+.replay-pop--speed { display: none; }
+
 @media (max-width: 760px) {
   .app-shell { padding-bottom: 76px; }
   .replay-player__inner { gap: 10px; padding: 9px 12px; }
@@ -1323,6 +1396,14 @@ a.footer__link:hover { color: var(--sol-green); }
   .replay-player__daycount { display: none; }
   .replay-player__day { min-width: 70px; }
   .replay-player__cta span, .replay-player__cta { font-size: 0.72rem; }
+  /* Collapse the four inline speed chips into the single upward-popup trigger. */
+  .replay-player__speeds { display: none; }
+  .replay-pop--speed { display: inline-flex; }
+  /* Keep popovers from overflowing narrow screens. */
+  .replay-pop__panel { max-width: calc(100vw - 24px); }
+  .replay-pop--date .replay-pop__panel { max-height: 220px; }
+  /* Ready-row popovers are near the right edge → anchor from the right. */
+  .replay-player__row--play .replay-pop__panel { left: auto; right: 0; }
 }
 
 /* ═══════════════════════════════ TOASTS ══════════════════════════════ */

@@ -85,6 +85,7 @@ export const dict: Record<Locale, Dict> = {
     // Replay
     "replay.badge": "REPLAY",
     "replay.selectStart": "Start date",
+    "replay.pickDate": "Pick a date",
     "replay.speed": "Speed",
     "replay.prepare": "Prepare replay",
     "replay.preparing": "Caching {done}/{total} days…",
@@ -196,6 +197,7 @@ export const dict: Record<Locale, Dict> = {
     // Replay
     "replay.badge": "РЕПЛЕЙ",
     "replay.selectStart": "Дата начала",
+    "replay.pickDate": "Выберите дату",
     "replay.speed": "Скорость",
     "replay.prepare": "Подготовить реплей",
     "replay.preparing": "Кэшируем {done}/{total} дней…",
