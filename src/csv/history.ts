@@ -2,13 +2,17 @@
 // and load/cache per-day validator snapshots for the interactive replay.
 //
 // Day CSVs are cached via the Cache API ("sol-history-v1"); the sorted list of
-// available dates is cached in localStorage ("sol.history.dates.v1", 6h TTL).
+// available dates is cached in localStorage ("sol.history.dates.v2", 6h TTL).
+//
+// Bump DATES_CACHE_KEY whenever backfilled releases change the historical date
+// list — otherwise clients keep serving a stale range until the TTL expires.
 
 import { DATA_START_DATE, REPO } from "../config";
 import { parseCsv, ValidatorRow } from "./parse";
 
 const PER_PAGE = 100;
-const DATES_CACHE_KEY = "sol.history.dates.v1";
+const DATES_CACHE_KEY = "sol.history.dates.v2";
+const STALE_DATES_CACHE_KEYS = ["sol.history.dates.v1"];
 const DATES_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
 const CACHE_NAME = "sol-history-v1";
 
@@ -43,6 +47,8 @@ function readDatesCache(): DatesCacheEntry | null {
   const ls = getLocalStorage();
   if (!ls) return null;
   try {
+    // Drop entries left behind by earlier cache versions.
+    for (const key of STALE_DATES_CACHE_KEYS) ls.removeItem(key);
     const raw = ls.getItem(DATES_CACHE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as DatesCacheEntry;
